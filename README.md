@@ -1,5 +1,10 @@
 # `draftr`
 
+# Prerequirements
+- [redis](http://redis.io/)
+- [mongodb](https://www.mongodb.org/)
+
+
 # The MIT License (MIT)
 
 Copyright (c) 2015 draftr
