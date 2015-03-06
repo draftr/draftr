@@ -23,7 +23,8 @@
     "passport-http-bearer": "1.0.x",
     "node-readability": "1.0.x",
     "feedparser": "1.0.x",
-    "node-cache": "1.1.x"
+    "node-cache": "1.1.x",
+    "is-online": "3.1.x"
   },
   "devDependencies": {
     "mocha": "2.1.x",
