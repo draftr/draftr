@@ -3,4 +3,5 @@
 node_modules
 public/deps
 distdump.rdb
-*rdbpublic/css/style.css
+*.rdb
+public/css/style.css
