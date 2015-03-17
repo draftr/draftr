@@ -1,0 +1,16 @@
+<form class="form" ng-hide="isAuthenticated">
+  <div class="form-group">
+    <label for="sign-in-username">Username</label>
+    <input ng-model="username" type="text" id="sign-in-username" placeholder="Username">
+  </div>
+  <div class="form-group">
+    <label for="sign-in-password">Password</label>
+    <input ng-model="password" type="password" id="sign-in-password" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <button ng-click="signIn()">SignIn</button>
+  </div>
+</form>
+<div ng-show="isAuthenticated">
+  You are already authenticated.
+</div>
