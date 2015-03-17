@@ -4,25 +4,21 @@
   <title>draftr</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <link rel="stylesheet" type="text/css" href="/css/draftr.css">
+  <base href="/">
 </head>
-<body class="skin-3">
-  <div id="wrapper">
-    <nav class="navbar-default navbar-static-side" role="navigation" id="navigation">
+<body>
+  <header id="header">
+    <nav id="nav">
+      <ul>
+        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+        <li ui-sref-active="active"><a ui-sref="work-space">Workspaces</a></li>
+        <li ui-sref-active="active"><a ui-sref="signin">SignIn</a> or <a ui-sref="signup">SignUp</a></li>
+      </ul>
     </nav>
-    <div id="page-wrapper" class="gray-bg">
-      <div class="row border-bottom" id="headline">
-        <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0" id="headline"></nav>
-      </div>
-      <div id="content-wrapper" ng-controller="MainController">
-        STUFF
-      </div>
-      <div class="footer">
-        <div>
-        </div>
-      </div>
-    </div>
-  </div>
+  </header>
+  <main id="main" role="main" ui-view>
+  </main>
   <script src="/deps/requirejs/require.js" data-main="/js/init.js"></script>
 </body>
 </html>

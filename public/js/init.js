@@ -10,6 +10,7 @@
       'angular/route':     '/deps/angular-route/angular-route',
       'angular/ui-router': '/deps/angular-ui-router/release/angular-ui-router',
       'bluebird':          '/deps/bluebird/js/browser/bluebird',
+      'store':             '/deps/store.js/store+json2.min'
     },
     shim: {
       'angular':           { 'exports': 'angular', 'deps': ['jquery'] },
@@ -19,7 +20,10 @@
     },
     config: {
       'draftr/app': [
-        { path: 'draftr/controller/main', name: 'MainController' }
+        { path: 'draftr/controller/home',             name: 'HomeController'   },
+        { path: 'draftr/controller/sign-in',          name: 'SignInController' },
+        { path: 'draftr/controller/sign-up',          name: 'SignUpController' },
+        { path: 'draftr/controller/work-space/list',  name: 'WorkSpaceListController' },
       ]
     }
   });

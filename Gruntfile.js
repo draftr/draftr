@@ -74,14 +74,13 @@ module.exports = function (grunt) {
         './dist'
       ],
       draftrCss: [
-        './public/css/draftr.css',
         './public/css/draftr.css.map'
       ]
     },
     cssmin: {
       main: {
         files: {
-          'public/css/style.css': [
+          'public/css/draftr.css': [
             'public/deps/bootstrap/dist/css/bootstrap.css',
             'public/css/draftr.css'
           ]

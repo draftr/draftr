@@ -1,0 +1,32 @@
+@import "../deps/bourbon/app/assets/stylesheets/bourbon"
+@import "../deps/neat/app/assets/stylesheets/neat"
+@import "font/merriweather"
+@import "font/sourcesanspro"
+
+$config-font-size: 18px
+
+body, html
+  font-family: "Source Sans Pro"
+  font-size: $config-font-size
+  margin: 0
+  padding: 0
+
+#main
+  +outer-container(1200px)
+
+#header
+  +outer-container(100%)
+  background-color: #34495e
+  height: 60px
+  line-height: 60px
+  #nav
+    ul
+      float: right
+      list-style-type: none
+      margin: 0
+      padding: 0
+      li
+        float: left
+        margin: 0 30px
+        a
+          color: #ecf0f1
