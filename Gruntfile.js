@@ -30,10 +30,6 @@ module.exports = function (grunt) {
       sass: {
         files: ['./public/sass/**/*.sass'],
         tasks: ['layout']
-      },
-      js: {
-        files: ['./lib/client/**/*.js'],
-        tasks: ['requirejs:dev']
       }
     },
     'mocha_istanbul': {
@@ -98,33 +94,6 @@ module.exports = function (grunt) {
           './public/css/draftr.css': './public/sass/draftr.sass'
         }
       }
-    },
-    requirejs: {
-      options: {
-        paths: {
-          'draftr': 'lib/client'
-        },
-        // exclude: [
-        //   'lib/client/main'
-        // ],
-        removeCombined: true,
-        out: 'public/js/draftr.js',
-        optimize: 'none',
-        name: 'lib/client/main',
-        onBuildWrite: function (moduleName, path, contents) {
-          return contents.replace(/lib\/client/g, 'draftr');
-        }
-      },
-      dev:{
-        options:{
-          optimize:'none'
-        }
-      },
-      release:{
-        options:{
-          optimize:'uglify'
-        }
-      }
     }
   });
 
@@ -144,5 +113,5 @@ module.exports = function (grunt) {
   grunt.registerTask('install', ['shell:bower']);
   grunt.registerTask('valid', ['jshint']);
   grunt.registerTask('test', ['env:test', 'mocha_istanbul']);
-  grunt.registerTask('dev', ['env:dev', 'requirejs:dev', 'layout', 'express:dev', 'watch']);
+  grunt.registerTask('dev', ['env:dev', 'layout', 'express:dev', 'watch']);
 };
