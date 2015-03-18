@@ -72,9 +72,6 @@ module.exports = function (grunt) {
       ],
       dist: [
         './dist'
-      ],
-      draftrCss: [
-        './public/css/draftr.css.map'
       ]
     },
     cssmin: {
@@ -89,6 +86,9 @@ module.exports = function (grunt) {
     },
     sass: {
       main: {
+        options: {
+          sourcemap: 'none'
+        },
         files: {
           './public/css/draftr.css': './public/sass/draftr.sass'
         }
@@ -108,7 +108,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-sass');
 
-  grunt.registerTask('layout', ['sass:main', 'cssmin:main', 'clean:draftrCss']);
+  grunt.registerTask('layout', ['sass:main', 'cssmin:main']);
   grunt.registerTask('install', ['shell:bower']);
   grunt.registerTask('valid', ['jshint']);
   grunt.registerTask('test', ['env:test', 'mocha_istanbul']);

@@ -10,7 +10,8 @@
       'angular/route':     '/deps/angular-route/angular-route',
       'angular/ui-router': '/deps/angular-ui-router/release/angular-ui-router',
       'bluebird':          '/deps/bluebird/js/browser/bluebird',
-      'store':             '/deps/store.js/store+json2.min'
+      'store':             '/deps/store.js/store+json2.min',
+      'event-emitter':     '/deps/eventemitter2/lib/eventemitter2'
     },
     shim: {
       'angular':           { 'exports': 'angular', 'deps': ['jquery'] },
@@ -20,10 +21,12 @@
     },
     config: {
       'draftr/app': [
-        { path: 'draftr/controller/home',             name: 'HomeController'   },
-        { path: 'draftr/controller/sign-in',          name: 'SignInController' },
-        { path: 'draftr/controller/sign-up',          name: 'SignUpController' },
-        { path: 'draftr/controller/work-space/list',  name: 'WorkSpaceListController' },
+        { path: 'draftr/controller/header',            name: 'HeaderController' },
+        { path: 'draftr/controller/home',              name: 'HomeController'   },
+        { path: 'draftr/controller/sign-in',           name: 'SignInController' },
+        { path: 'draftr/controller/sign-up',           name: 'SignUpController' },
+        { path: 'draftr/controller/work-space/list',   name: 'WorkSpaceListController' },
+        { path: 'draftr/controller/work-space/detail', name: 'WorkSpaceDetailController' }
       ]
     }
   });

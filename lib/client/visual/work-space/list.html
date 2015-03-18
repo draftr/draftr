@@ -1,0 +1,21 @@
+<div class="container">
+  <section class="section">
+    <ul class="work-space">
+      <li ng-repeat="item in list">
+        <div class="info">
+          <h2>{{ item.name }}</h2>
+          <p ng-show="item.description">{{ item.description | limitTo : 270 }}</p>
+        </div>
+        <ul class="team" ng-show="item.users">
+          <li ng-repeat="entity in item.users">
+            <img ng-src="{{ entity.user.image }}?size=40" class="image-circle" alt="{{ entity.user.username }}">
+          </li>
+        </ul>
+        <div class="action">
+          <a ui-sref="work-space-detail({ id: item.id })" class="button button-xs"><i class="fa fa-eye fa-lg"></i></a>
+          <a class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>

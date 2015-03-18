@@ -8,16 +8,26 @@
   <base href="/">
 </head>
 <body>
-  <header id="header">
-    <nav id="nav">
-      <ul>
-        <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
-        <li ui-sref-active="active"><a ui-sref="work-space">Workspaces</a></li>
-        <li ui-sref-active="active"><a ui-sref="signin">SignIn</a> or <a ui-sref="signup">SignUp</a></li>
-      </ul>
-    </nav>
+  <header id="header" ng-controller="HeaderController">
+    <div class="container">
+      <div id="logo">
+        <h1><a ui-sref="home">draftr</a></h1>
+      </div>
+      <nav id="nav">
+        <ul>
+          <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+          <li ng-show="user.isAuthenticated" ui-sref-active="active"><a ui-sref="work-space">Workspaces</a></li>
+          <li ng-hide="user.isAuthenticated" ui-sref-active="active"><a ui-sref="signin">SignIn</a> or <a ui-sref="signup">SignUp</a></li>
+          <li ng-show="user.isAuthenticated" class="user">
+            <img ng-src="{{ user.image }}?size=40" class="image-circle"> {{ user.username }}
+          </li>
+          <li ng-show="user.isAuthenticated"><a ng-click="signOut()"><i class="fa fa-sign-out"></i> SignOut</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
-  <main id="main" role="main" ui-view>
+  <main id="main" role="main">
+    <div ui-view></div>
   </main>
   <script src="/deps/requirejs/require.js" data-main="/js/init.js"></script>
 </body>

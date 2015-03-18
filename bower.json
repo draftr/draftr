@@ -10,6 +10,8 @@
     "angular-ui-router": "0.2.x",
     "bourbon": "4.2.x",
     "neat": "1.7.x",
-    "store.js": "1.3.x"
+    "store.js": "1.3.x",
+    "eventemitter2": "0.4.x",
+    "angular-truncate": "https://github.com/sparkalow/angular-truncate.git"
   }
 }

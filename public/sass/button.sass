@@ -1,0 +1,73 @@
+.button
+  display: inline-block
+  padding: 10px 30px
+  +border-top-radius(3px)
+  +border-bottom-radius(3px)
+  +border-left-radius(3px)
+  +border-right-radius(3px)
+  border: 2px solid $color-blue
+  +transition(background 100ms ease-in 0s)
+  &:focus
+    text-decoration: none
+  &.button-inverse
+    color: #ffffff
+    background-color: $color-blue
+    &:hover
+      color: $color-blue
+      background-color: rgba(255, 255, 255, 0)
+      border: 2px solid $color-blue
+  &.button-xs
+    padding: 6px 26px
+    font-size: 12px
+  &.button-s
+    padding: 8px 28px
+    font-size: 14px
+  &.button-l
+    padding: 12px 32px
+    font-size: 18px
+  &.button-xl
+    padding: 14px 34px
+    font-size: 20px
+  &:hover, &.active
+    background-color: $color-blue
+    color: #ffffff
+    border-color: $color-blue
+  &.button-danger
+    color: $color-red
+    border-color: $color-red
+    &:hover
+      color: #ffffff
+      background-color: $color-red
+    &.button-inverse
+      background-color: $color-red
+      color: #ffffff
+      &:hover
+        color: $color-red
+        background-color: rgba(255, 255, 255, 0)
+        border-color: $color-red
+  &.button-warning
+    color: $color-orange
+    border-color: $color-orange
+    &:hover
+      color: #ffffff
+      background-color: $color-orange
+    &.button-inverse
+      background-color: $color-orange
+      color: #ffffff
+      &:hover
+        color: $color-orange
+        background-color: rgba(255, 255, 255, 0)
+        border-color: $color-orange
+  &.button-success
+    color: $color-green
+    border-color: $color-green
+    &:hover
+      color: #ffffff
+      background-color: $color-green
+    &.button-inverse
+      background-color: $color-green
+      color: #ffffff
+      &:hover
+        color: $color-green
+        background-color: rgba(255, 255, 255, 0)
+        border-color: $color-green

@@ -24,7 +24,8 @@
     "feedparser": "1.0.x",
     "node-cache": "1.1.x",
     "is-online": "3.1.x",
-    "ejs": "2.3.x"
+    "ejs": "2.3.x",
+    "gravatar": "1.1.x"
   },
   "devDependencies": {
     "mocha": "2.1.x",
