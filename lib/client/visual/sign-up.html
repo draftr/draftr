@@ -1,0 +1,24 @@
+<div class="container">
+  <section class="section">
+    <form class="form">
+      <div class="error" ng-show="err">
+        {{ err.message }}
+      </div>
+      <div class="form-group">
+        <label for="sign-up-username">Username</label>
+        <input ng-model="username" type="text" id="sign-up-username" placeholder="Username">
+      </div>
+      <div class="form-group">
+        <label for="sign-up-username">Email-Address</label>
+        <input ng-model="emailAddress" type="text" id="sign-up-emailAddress" placeholder="Email-Adress">
+      </div>
+      <div class="form-group">
+        <label for="sign-up-password">Password</label>
+        <input ng-model="password" type="password" id="sign-up-password" placeholder="Password">
+      </div>
+      <div class="form-group">
+        <a href="#" class="button button-success button-s" ng-click="signUp()">SignUp</a>
+      </div>
+    </form>
+  </section>
+</div>

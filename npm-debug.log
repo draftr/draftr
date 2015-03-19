@@ -1,0 +1,344 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose readDependencies using package.json deps
+5 verbose install where, deps [ '/Users/mweihofen/WebSites/public_html/draftr',
+5 verbose install   [ 'express',
+5 verbose install     'body-parser',
+5 verbose install     'response-time',
+5 verbose install     'method-override',
+5 verbose install     'bluebird',
+5 verbose install     'underscore',
+5 verbose install     'underscore-deep-extend',
+5 verbose install     'express-validator',
+5 verbose install     'validator',
+5 verbose install     'socket.io',
+5 verbose install     'bunyan',
+5 verbose install     'mongoose',
+5 verbose install     'request',
+5 verbose install     'jsonwebtoken',
+5 verbose install     'kue',
+5 verbose install     'passport',
+5 verbose install     'passport-http-bearer',
+5 verbose install     'node-readability',
+5 verbose install     'feedparser',
+5 verbose install     'node-cache',
+5 verbose install     'is-online',
+5 verbose install     'ejs',
+5 verbose install     'gravatar',
+5 verbose install     'mocha',
+5 verbose install     'chai',
+5 verbose install     'bower',
+5 verbose install     'grunt-cli',
+5 verbose install     'grunt',
+5 verbose install     'grunt-contrib-jshint',
+5 verbose install     'grunt-contrib-watch',
+5 verbose install     'grunt-express-server',
+5 verbose install     'grunt-mocha-istanbul',
+5 verbose install     'grunt-env',
+5 verbose install     'grunt-release-it',
+5 verbose install     'grunt-shell',
+5 verbose install     'grunt-contrib-clean',
+5 verbose install     'grunt-contrib-cssmin',
+5 verbose install     'grunt-contrib-copy',
+5 verbose install     'grunt-contrib-sass',
+5 verbose install     'grunt-contrib-requirejs' ] ]
+6 info preinstall draftr@0.0.0
+7 verbose readDependencies using package.json deps
+8 verbose already installed skipping body-parser@1.12.x /Users/mweihofen/WebSites/public_html/draftr
+9 verbose already installed skipping response-time@2.3.x /Users/mweihofen/WebSites/public_html/draftr
+10 verbose already installed skipping method-override@2.3.x /Users/mweihofen/WebSites/public_html/draftr
+11 verbose already installed skipping bluebird@2.9.x /Users/mweihofen/WebSites/public_html/draftr
+12 verbose already installed skipping underscore@1.8.x /Users/mweihofen/WebSites/public_html/draftr
+13 verbose already installed skipping underscore-deep-extend@0.0.x /Users/mweihofen/WebSites/public_html/draftr
+14 verbose already installed skipping express-validator@2.8.x /Users/mweihofen/WebSites/public_html/draftr
+15 verbose already installed skipping validator@3.32.x /Users/mweihofen/WebSites/public_html/draftr
+16 verbose already installed skipping socket.io@1.3.x /Users/mweihofen/WebSites/public_html/draftr
+17 verbose already installed skipping bunyan@1.3.x /Users/mweihofen/WebSites/public_html/draftr
+18 verbose already installed skipping mongoose@3.8.x /Users/mweihofen/WebSites/public_html/draftr
+19 verbose already installed skipping request@2.53.x /Users/mweihofen/WebSites/public_html/draftr
+20 verbose already installed skipping jsonwebtoken@3.2.x /Users/mweihofen/WebSites/public_html/draftr
+21 verbose already installed skipping kue@0.8.x /Users/mweihofen/WebSites/public_html/draftr
+22 verbose already installed skipping passport@0.2.x /Users/mweihofen/WebSites/public_html/draftr
+23 verbose already installed skipping passport-http-bearer@1.0.x /Users/mweihofen/WebSites/public_html/draftr
+24 verbose already installed skipping node-readability@1.0.x /Users/mweihofen/WebSites/public_html/draftr
+25 verbose already installed skipping feedparser@1.0.x /Users/mweihofen/WebSites/public_html/draftr
+26 verbose already installed skipping node-cache@1.1.x /Users/mweihofen/WebSites/public_html/draftr
+27 verbose already installed skipping is-online@3.1.x /Users/mweihofen/WebSites/public_html/draftr
+28 verbose already installed skipping ejs@2.3.x /Users/mweihofen/WebSites/public_html/draftr
+29 verbose cache add [ 'gravatar@1.1.x', null ]
+30 verbose cache add name=undefined spec="gravatar@1.1.x" args=["gravatar@1.1.x",null]
+31 verbose parsed url { protocol: null,
+31 verbose parsed url   slashes: null,
+31 verbose parsed url   auth: null,
+31 verbose parsed url   host: null,
+31 verbose parsed url   port: null,
+31 verbose parsed url   hostname: null,
+31 verbose parsed url   hash: null,
+31 verbose parsed url   search: null,
+31 verbose parsed url   query: null,
+31 verbose parsed url   pathname: 'gravatar@1.1.x',
+31 verbose parsed url   path: 'gravatar@1.1.x',
+31 verbose parsed url   href: 'gravatar@1.1.x' }
+32 verbose already installed skipping mocha@2.1.x /Users/mweihofen/WebSites/public_html/draftr
+33 verbose already installed skipping chai@2.1.x /Users/mweihofen/WebSites/public_html/draftr
+34 verbose already installed skipping bower@1.3.x /Users/mweihofen/WebSites/public_html/draftr
+35 verbose cache add name="gravatar" spec="1.1.x" args=["gravatar","1.1.x"]
+36 verbose parsed url { protocol: null,
+36 verbose parsed url   slashes: null,
+36 verbose parsed url   auth: null,
+36 verbose parsed url   host: null,
+36 verbose parsed url   port: null,
+36 verbose parsed url   hostname: null,
+36 verbose parsed url   hash: null,
+36 verbose parsed url   search: null,
+36 verbose parsed url   query: null,
+36 verbose parsed url   pathname: '1.1.x',
+36 verbose parsed url   path: '1.1.x',
+36 verbose parsed url   href: '1.1.x' }
+37 verbose addNamed [ 'gravatar', '1.1.x' ]
+38 verbose addNamed [ null, '>=1.1.0-0 <1.2.0-0' ]
+39 verbose already installed skipping grunt-cli@0.1.x /Users/mweihofen/WebSites/public_html/draftr
+40 silly lockFile 7256f352-gravatar-1-1-x gravatar@1.1.x
+41 verbose lock gravatar@1.1.x /Users/mweihofen/.npm/7256f352-gravatar-1-1-x.lock
+42 verbose already installed skipping grunt@0.4.x /Users/mweihofen/WebSites/public_html/draftr
+43 verbose already installed skipping grunt-contrib-jshint@0.11.x /Users/mweihofen/WebSites/public_html/draftr
+44 silly addNameRange { name: 'gravatar', range: '>=1.1.0-0 <1.2.0-0', hasData: false }
+45 verbose already installed skipping grunt-contrib-watch@0.6.x /Users/mweihofen/WebSites/public_html/draftr
+46 verbose already installed skipping grunt-express-server@0.4.x /Users/mweihofen/WebSites/public_html/draftr
+47 verbose already installed skipping grunt-mocha-istanbul@2.3.x /Users/mweihofen/WebSites/public_html/draftr
+48 verbose already installed skipping grunt-env@0.4.x /Users/mweihofen/WebSites/public_html/draftr
+49 verbose already installed skipping grunt-release-it@0.2.x /Users/mweihofen/WebSites/public_html/draftr
+50 verbose already installed skipping grunt-shell@1.1.x /Users/mweihofen/WebSites/public_html/draftr
+51 verbose already installed skipping grunt-contrib-clean@0.6.x /Users/mweihofen/WebSites/public_html/draftr
+52 verbose already installed skipping grunt-contrib-cssmin@0.12.x /Users/mweihofen/WebSites/public_html/draftr
+53 verbose already installed skipping grunt-contrib-copy@0.8.x /Users/mweihofen/WebSites/public_html/draftr
+54 verbose already installed skipping grunt-contrib-sass@0.9.x /Users/mweihofen/WebSites/public_html/draftr
+55 verbose already installed skipping grunt-contrib-requirejs@0.4.x /Users/mweihofen/WebSites/public_html/draftr
+56 verbose already installed skipping express@4.12.x /Users/mweihofen/WebSites/public_html/draftr
+57 verbose request where is /gravatar
+58 verbose request registry https://registry.npmjs.org/
+59 verbose request id 9e4e8a3973fa2585
+60 verbose url raw /gravatar
+61 verbose url resolving [ 'https://registry.npmjs.org/', './gravatar' ]
+62 verbose url resolved https://registry.npmjs.org/gravatar
+63 verbose request where is https://registry.npmjs.org/gravatar
+64 info trying registry request attempt 1 at 08:29:56
+65 http GET https://registry.npmjs.org/gravatar
+66 http 200 https://registry.npmjs.org/gravatar
+67 silly registry.get cb [ 200,
+67 silly registry.get   { date: 'Thu, 19 Mar 2015 07:29:56 GMT',
+67 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+67 silly registry.get     etag: '"CDD7CZXIPFFXV750XM4SZ6ZI8"',
+67 silly registry.get     'content-type': 'application/json',
+67 silly registry.get     'cache-control': 'max-age=60',
+67 silly registry.get     'content-length': '8191',
+67 silly registry.get     'accept-ranges': 'bytes',
+67 silly registry.get     via: '1.1 varnish',
+67 silly registry.get     age: '0',
+67 silly registry.get     'x-served-by': 'cache-fra1225-FRA',
+67 silly registry.get     'x-cache': 'MISS',
+67 silly registry.get     'x-cache-hits': '0',
+67 silly registry.get     'x-timer': 'S1426750196.562312,VS0,VE111',
+67 silly registry.get     vary: 'Accept',
+67 silly registry.get     'keep-alive': 'timeout=10, max=50',
+67 silly registry.get     connection: 'Keep-Alive' } ]
+68 silly addNameRange number 2 { name: 'gravatar', range: '>=1.1.0-0 <1.2.0-0', hasData: true }
+69 silly addNameRange versions [ 'gravatar',
+69 silly addNameRange   [ '1.0.0', '1.0.1', '1.0.2', '1.0.3', '1.0.6', '1.1.0' ] ]
+70 verbose addNamed [ 'gravatar', '1.1.0' ]
+71 verbose addNamed [ '1.1.0', '1.1.0' ]
+72 silly lockFile a4079a81-gravatar-1-1-0 gravatar@1.1.0
+73 verbose lock gravatar@1.1.0 /Users/mweihofen/.npm/a4079a81-gravatar-1-1-0.lock
+74 silly lockFile e589fdbd--org-gravatar-gravatar-1-1-0-tgz https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz
+75 verbose lock https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz /Users/mweihofen/.npm/e589fdbd--org-gravatar-gravatar-1-1-0-tgz.lock
+76 verbose addRemoteTarball [ 'https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz',
+76 verbose addRemoteTarball   '9a08d12cb5872c4d5d82cd6b0fc27d6c185fe10f' ]
+77 info retry fetch attempt 1 at 08:29:56
+78 verbose fetch to= /var/folders/8p/vm9qgl9j0fx8mw0q8pq_9kcc0000gp/T/npm-2882-Yaf7LkyJ/registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz
+79 http GET https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz
+80 http 200 https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz
+81 silly lockFile e589fdbd--org-gravatar-gravatar-1-1-0-tgz https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz
+82 silly lockFile e589fdbd--org-gravatar-gravatar-1-1-0-tgz https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz
+83 silly lockFile a4079a81-gravatar-1-1-0 gravatar@1.1.0
+84 silly lockFile a4079a81-gravatar-1-1-0 gravatar@1.1.0
+85 silly lockFile 7256f352-gravatar-1-1-x gravatar@1.1.x
+86 silly lockFile 7256f352-gravatar-1-1-x gravatar@1.1.x
+87 silly resolved [ { name: 'gravatar',
+87 silly resolved     description: 'Gravatar Node.js library',
+87 silly resolved     keywords: [ 'gravatar', 'avatar', 'package.json' ],
+87 silly resolved     version: '1.1.0',
+87 silly resolved     author: { name: 'Emerson Macedo', email: 'emerleite@gmail.com' },
+87 silly resolved     repository:
+87 silly resolved      { type: 'git',
+87 silly resolved        url: 'git://github.com/emerleite/node-gravatar.git' },
+87 silly resolved     devDependencies: { mocha: '1.21.4', should: '4.0.4' },
+87 silly resolved     main: 'index.js',
+87 silly resolved     scripts: { test: 'node_modules/mocha/bin/mocha -R spec' },
+87 silly resolved     engines: { node: '>=0.8.0' },
+87 silly resolved     bugs: { url: 'https://github.com/emerleite/node-gravatar/issues' },
+87 silly resolved     homepage: 'https://github.com/emerleite/node-gravatar',
+87 silly resolved     _id: 'gravatar@1.1.0',
+87 silly resolved     dist:
+87 silly resolved      { shasum: '9a08d12cb5872c4d5d82cd6b0fc27d6c185fe10f',
+87 silly resolved        tarball: 'http://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz' },
+87 silly resolved     _from: 'gravatar@1.1.x',
+87 silly resolved     _npmVersion: '1.4.3',
+87 silly resolved     _npmUser: { name: 'emerleite', email: 'emerleite@gmail.com' },
+87 silly resolved     maintainers: [ [Object] ],
+87 silly resolved     directories: {},
+87 silly resolved     _shasum: '9a08d12cb5872c4d5d82cd6b0fc27d6c185fe10f',
+87 silly resolved     _resolved: 'https://registry.npmjs.org/gravatar/-/gravatar-1.1.0.tgz' } ]
+88 info install gravatar@1.1.0 into /Users/mweihofen/WebSites/public_html/draftr
+89 info installOne gravatar@1.1.0
+90 verbose node_modules/gravatar unbuild
+91 verbose tar unpack /Users/mweihofen/.npm/gravatar/1.1.0/package.tgz
+92 silly lockFile c8da4ce5-tml-draftr-node-modules-gravatar tar:///Users/mweihofen/WebSites/public_html/draftr/node_modules/gravatar
+93 verbose lock tar:///Users/mweihofen/WebSites/public_html/draftr/node_modules/gravatar /Users/mweihofen/.npm/c8da4ce5-tml-draftr-node-modules-gravatar.lock
+94 silly lockFile 6b0360a8-n-npm-gravatar-1-1-0-package-tgz tar:///Users/mweihofen/.npm/gravatar/1.1.0/package.tgz
+95 verbose lock tar:///Users/mweihofen/.npm/gravatar/1.1.0/package.tgz /Users/mweihofen/.npm/6b0360a8-n-npm-gravatar-1-1-0-package-tgz.lock
+96 silly gunzTarPerm modes [ '755', '644' ]
+97 silly gunzTarPerm extractEntry package.json
+98 silly gunzTarPerm extractEntry .npmignore
+99 silly gunzTarPerm extractEntry index.js
+100 silly gunzTarPerm extractEntry .travis.yml
+101 silly gunzTarPerm extractEntry Changelog.md
+102 silly gunzTarPerm extractEntry Readme.md
+103 silly gunzTarPerm extractEntry lib/gravatar.js
+104 silly gunzTarPerm extractEntry test/gravatar.test.js
+105 silly lockFile c8da4ce5-tml-draftr-node-modules-gravatar tar:///Users/mweihofen/WebSites/public_html/draftr/node_modules/gravatar
+106 silly lockFile c8da4ce5-tml-draftr-node-modules-gravatar tar:///Users/mweihofen/WebSites/public_html/draftr/node_modules/gravatar
+107 silly lockFile 6b0360a8-n-npm-gravatar-1-1-0-package-tgz tar:///Users/mweihofen/.npm/gravatar/1.1.0/package.tgz
+108 silly lockFile 6b0360a8-n-npm-gravatar-1-1-0-package-tgz tar:///Users/mweihofen/.npm/gravatar/1.1.0/package.tgz
+109 info preinstall gravatar@1.1.0
+110 verbose readDependencies using package.json deps
+111 verbose readDependencies using package.json deps
+112 silly resolved []
+113 verbose about to build /Users/mweihofen/WebSites/public_html/draftr/node_modules/gravatar
+114 info build /Users/mweihofen/WebSites/public_html/draftr/node_modules/gravatar
+115 verbose linkStuff [ false,
+115 verbose linkStuff   false,
+115 verbose linkStuff   false,
+115 verbose linkStuff   '/Users/mweihofen/WebSites/public_html/draftr/node_modules' ]
+116 info linkStuff gravatar@1.1.0
+117 verbose linkBins gravatar@1.1.0
+118 verbose linkMans gravatar@1.1.0
+119 verbose rebuildBundles gravatar@1.1.0
+120 info install gravatar@1.1.0
+121 info postinstall gravatar@1.1.0
+122 info build /Users/mweihofen/WebSites/public_html/draftr
+123 verbose linkStuff [ false, false, false, '/Users/mweihofen/WebSites/public_html' ]
+124 info linkStuff draftr@0.0.0
+125 verbose linkBins draftr@0.0.0
+126 verbose linkMans draftr@0.0.0
+127 verbose rebuildBundles draftr@0.0.0
+128 verbose rebuildBundles [ '.bin',
+128 verbose rebuildBundles   'bluebird',
+128 verbose rebuildBundles   'body-parser',
+128 verbose rebuildBundles   'bower',
+128 verbose rebuildBundles   'bunyan',
+128 verbose rebuildBundles   'chai',
+128 verbose rebuildBundles   'ejs',
+128 verbose rebuildBundles   'express',
+128 verbose rebuildBundles   'express-hbs',
+128 verbose rebuildBundles   'express-validator',
+128 verbose rebuildBundles   'feedparser',
+128 verbose rebuildBundles   'gravatar',
+128 verbose rebuildBundles   'grunt',
+128 verbose rebuildBundles   'grunt-cli',
+128 verbose rebuildBundles   'grunt-contrib-clean',
+128 verbose rebuildBundles   'grunt-contrib-copy',
+128 verbose rebuildBundles   'grunt-contrib-cssmin',
+128 verbose rebuildBundles   'grunt-contrib-jshint',
+128 verbose rebuildBundles   'grunt-contrib-requirejs',
+128 verbose rebuildBundles   'grunt-contrib-sass',
+128 verbose rebuildBundles   'grunt-contrib-watch',
+128 verbose rebuildBundles   'grunt-env',
+128 verbose rebuildBundles   'grunt-express-server',
+128 verbose rebuildBundles   'grunt-mocha-istanbul',
+128 verbose rebuildBundles   'grunt-release-it',
+128 verbose rebuildBundles   'grunt-shell',
+128 verbose rebuildBundles   'is-online',
+128 verbose rebuildBundles   'istanbul',
+128 verbose rebuildBundles   'jsonwebtoken',
+128 verbose rebuildBundles   'kue',
+128 verbose rebuildBundles   'method-override',
+128 verbose rebuildBundles   'mocha',
+128 verbose rebuildBundles   'mongoose',
+128 verbose rebuildBundles   'node-cache',
+128 verbose rebuildBundles   'node-readability',
+128 verbose rebuildBundles   'passport',
+128 verbose rebuildBundles   'passport-http-bearer',
+128 verbose rebuildBundles   'request',
+128 verbose rebuildBundles   'response-time',
+128 verbose rebuildBundles   'socket.io',
+128 verbose rebuildBundles   'underscore',
+128 verbose rebuildBundles   'underscore-deep-extend',
+128 verbose rebuildBundles   'validator' ]
+129 verbose rebuild bundle /Users/mweihofen/WebSites/public_html/draftr/node_modules/express-hbs
+130 info build /Users/mweihofen/WebSites/public_html/draftr/node_modules/express-hbs
+131 info preinstall express-hbs@0.8.1
+132 verbose linkStuff [ false,
+132 verbose linkStuff   false,
+132 verbose linkStuff   false,
+132 verbose linkStuff   '/Users/mweihofen/WebSites/public_html/draftr/node_modules' ]
+133 info linkStuff express-hbs@0.8.1
+134 verbose linkBins express-hbs@0.8.1
+135 verbose linkMans express-hbs@0.8.1
+136 verbose rebuildBundles express-hbs@0.8.1
+137 verbose rebuildBundles [ '.bin', 'handlebars', 'js-beautify', 'readdirp' ]
+138 info install express-hbs@0.8.1
+139 info postinstall express-hbs@0.8.1
+140 verbose rebuild bundle /Users/mweihofen/WebSites/public_html/draftr/node_modules/istanbul
+141 info build /Users/mweihofen/WebSites/public_html/draftr/node_modules/istanbul
+142 info preinstall istanbul@0.3.7
+143 verbose linkStuff [ false,
+143 verbose linkStuff   false,
+143 verbose linkStuff   false,
+143 verbose linkStuff   '/Users/mweihofen/WebSites/public_html/draftr/node_modules' ]
+144 info linkStuff istanbul@0.3.7
+145 verbose linkBins istanbul@0.3.7
+146 verbose link bins [ { istanbul: './lib/cli.js' },
+146 verbose link bins   '/Users/mweihofen/WebSites/public_html/draftr/node_modules/.bin',
+146 verbose link bins   false ]
+147 verbose linkMans istanbul@0.3.7
+148 verbose rebuildBundles istanbul@0.3.7
+149 verbose rebuildBundles [ '.bin',
+149 verbose rebuildBundles   'abbrev',
+149 verbose rebuildBundles   'async',
+149 verbose rebuildBundles   'escodegen',
+149 verbose rebuildBundles   'esprima',
+149 verbose rebuildBundles   'fileset',
+149 verbose rebuildBundles   'handlebars',
+149 verbose rebuildBundles   'js-yaml',
+149 verbose rebuildBundles   'mkdirp',
+149 verbose rebuildBundles   'nopt',
+149 verbose rebuildBundles   'once',
+149 verbose rebuildBundles   'resolve',
+149 verbose rebuildBundles   'supports-color',
+149 verbose rebuildBundles   'which',
+149 verbose rebuildBundles   'wordwrap' ]
+150 info install istanbul@0.3.7
+151 info postinstall istanbul@0.3.7
+152 info install draftr@0.0.0
+153 info postinstall draftr@0.0.0
+154 verbose unsafe-perm in lifecycle true
+155 info draftr@0.0.0 Failed to exec postinstall script
+156 error draftr@0.0.0 postinstall: `grunt install`
+156 error Exit status 6
+157 error Failed at the draftr@0.0.0 postinstall script.
+157 error This is most likely a problem with the draftr package,
+157 error not with npm itself.
+157 error Tell the author that this fails on your system:
+157 error     grunt install
+157 error You can get their info via:
+157 error     npm owner ls draftr
+157 error There is likely additional logging output above.
+158 error System Darwin 13.4.0
+159 error command "node" "/usr/local/bin/npm" "install"
+160 error cwd /Users/mweihofen/WebSites/public_html/draftr
+161 error node -v v0.10.32
+162 error npm -v 1.4.28
+163 error code ELIFECYCLE
+164 verbose exit [ 1, true ]
