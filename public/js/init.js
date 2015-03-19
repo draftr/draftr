@@ -26,7 +26,9 @@
         { path: 'draftr/controller/sign-in',           name: 'SignInController' },
         { path: 'draftr/controller/sign-up',           name: 'SignUpController' },
         { path: 'draftr/controller/work-space/list',   name: 'WorkSpaceListController' },
-        { path: 'draftr/controller/work-space/detail', name: 'WorkSpaceDetailController' }
+        { path: 'draftr/controller/work-space/detail', name: 'WorkSpaceDetailController' },
+        { path: 'draftr/controller/me/profile',        name: 'MeProfileController' },
+        { path: 'draftr/controller/me/work-space',     name: 'MeWorkSpaceController' },
       ]
     }
   });

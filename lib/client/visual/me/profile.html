@@ -1,0 +1,30 @@
+<div class="container">
+  <section class="section">
+    <h1>Profile bearbeiten</h1>
+  </section>
+  <section class="section">
+    <form class="form" ng-hide="isAuthenticated">
+      <div class="error" ng-show="err">
+        {{ err.message }}
+      </div>
+      <div class="form-group">
+        <label for="me-username">Username ändern</label>
+        <input ng-model="username" type="text" id="me-username" placeholder="{{ user.username }}" value="{{ user.username }}">
+      </div>
+      <div class="form-group">
+        <label for="me-emailAddress">Email-Address ändern</label>
+        <input ng-model="emailAddress" type="text" id="me-emailAddress" placeholder="{{ user.emailAddress }}" value="{{ user.emailAddress }}">
+      </div>
+      <div class="form-group">
+        <label for="me-password">Password ändern</label>
+        <input ng-model="password" type="password" id="me-password" placeholder="Password" value="{{ user.password }}">
+      </div>
+      <div class="form-group">
+        <button type="submit" class="button button-success button-s" ng-click="updateUser()">Ändern</button>
+      </div>
+    </form>
+    <div ng-show="isAuthenticated">
+      You are already authenticated.
+    </div>
+  </section>
+</div>
