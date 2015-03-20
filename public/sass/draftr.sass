@@ -5,6 +5,7 @@ $fa-font-path: "/font/fa" !default
 @import "../deps/font-awesome/scss/font-awesome"
 @import "font/merriweather"
 @import "font/sourcesanspro"
+@import "font/sourcecodepro"
 
 $config-font-size: 18px
 
@@ -128,13 +129,13 @@ a
       background-repeat: no-repeat
       .container
         position: relative
-        top: 80px
+        top: 120px
         color: #ffffff
         h1
           +headline()
       .tab-list
         position: relative
-        top: 140px
+        top: 100px
 
 ul.tab-list
   list-style-type: none
@@ -142,6 +143,10 @@ ul.tab-list
   padding: 0
   li
     float: left
+    &.active
+      a
+        background-color: #ffffff
+        color: $color-blue
     a
       display: inline-block
       height: 45px
@@ -149,6 +154,12 @@ ul.tab-list
       padding: 0 30px
       border: 3px solid #ffffff
       border-bottom: none
+      color: #ffffff
+      text-decoration: none
+      margin: 0 10px 0 0
+      &:hover
+        background-color: #ffffff
+        color: $color-blue
 a
   color: $color-blue
   &:hover
@@ -196,3 +207,53 @@ a
           margin-right: 0
     .action
       +span-columns(2)
+
+.work-space-write
+  .feed
+    position: fixed
+    top: 110px
+    bottom: 0
+    left: 0
+    width: 33.33%
+  .write
+    position: fixed
+    top: 110px
+    bottom: 0
+    left: 33.33%
+    background-color: rgba(0, 0, 0, 0.01)
+    .write-headline
+      height: 8%
+      border: 0
+      outline: none
+      width: 100%
+      padding: 0 2rem
+      font-size: 2rem
+      font-family: "Source Code Pro"
+      background-color: rgba(0, 0, 0, 0.01)
+    .write-input
+      width: 100%
+      height: 88%
+      border: 0
+      font-family: "Source Code Pro"
+      outline: none
+      padding: 2rem
+      line-height: 1.7rem
+      background-color: rgba(0, 0, 0, 0.01)
+      resize: none
+    .write-options
+      background-color: $color-blue
+      height: 4%
+      color: #ffffff
+  .preview
+    position: fixed
+    top: 110px
+    right: 0
+    bottom: 0
+    width: 33.33%
+    padding: 2rem
+    h1
+      &:first-child
+        padding-top: 0
+        margin-top: 0
+    h1, h2, h3, h4, h5, h6
+      +headline()
