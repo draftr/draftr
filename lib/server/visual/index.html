@@ -18,7 +18,7 @@
           <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
           <li ng-show="user.isAuthenticated" ui-sref-active="active"><a ui-sref="work-space">Workspaces</a></li>
           <li ng-hide="user.isAuthenticated" ui-sref-active="active"><a ui-sref="signin">SignIn</a> or <a ui-sref="signup">SignUp</a></li>
-          <li ng-show="user.isAuthenticated" class="user">
+          <li ng-show="user.isAuthenticated" class="user" ui-sref-active="active">
             <a ui-sref="me-profile"><img ng-src="{{ user.image }}?size=40" class="image-circle"> {{ user.username }}</a>
           </li>
           <li ng-show="user.isAuthenticated"><a ng-click="signOut()"><i class="fa fa-sign-out"></i> SignOut</a></li>
