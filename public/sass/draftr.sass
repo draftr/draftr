@@ -257,3 +257,27 @@ a
         margin-top: 0
     h1, h2, h3, h4, h5, h6
       +headline()
+.table
+  background-color: transparent
+  width: 100%
+  max-width: 100%
+  border-color: rgba(0, 0, 0, 0.2)
+  >thead
+    box-sizing: border-box
+    >tr
+      >th
+        font-weight: 800
+        text-align: left
+        padding: 8px
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  >tbody
+    box-sizing: border-box
+    >tr
+      padding: 0px
+      >td
+        padding: 8px
+        vertical-align: top
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+      &:hover
+        background-color: rgba(0, 0, 0, 0.1)
+

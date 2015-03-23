@@ -1,0 +1,20 @@
+<div class="container">
+  <section class="section">
+    <form class="form">
+      <div class="error" ng-show="err">
+        {{ err.message }}
+      </div>
+      <div class="form-group">
+        <label for="work-space-name">Name</label>
+        <input ng-model="name" type="text" id="work-space-name" placeholder="name">
+      </div>
+      <div class="form-group">
+        <label for="work-space-description">Description</label>
+        <textarea ng-model="description" id="work-space-description"> </textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="button button-success button-s" ng-click="create()">Create</button>
+      </div>
+    </form>
+  </section>
+</div>
