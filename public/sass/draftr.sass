@@ -220,19 +220,9 @@ a
     top: 110px
     bottom: 0
     left: 33.33%
-    background-color: rgba(0, 0, 0, 0.01)
-    .write-headline
-      height: 8%
-      border: 0
-      outline: none
-      width: 100%
-      padding: 0 2rem
-      font-size: 2rem
-      font-family: "Source Code Pro"
-      background-color: rgba(0, 0, 0, 0.01)
     .write-input
       width: 100%
-      height: 88%
+      height: 100%
       border: 0
       font-family: "Source Code Pro"
       outline: none
@@ -240,10 +230,6 @@ a
       line-height: 1.7rem
       background-color: rgba(0, 0, 0, 0.01)
       resize: none
-    .write-options
-      background-color: $color-blue
-      height: 4%
-      color: #ffffff
   .preview
     position: fixed
     top: 110px
@@ -257,27 +243,27 @@ a
         margin-top: 0
     h1, h2, h3, h4, h5, h6
       +headline()
+
 .table
   background-color: transparent
   width: 100%
   max-width: 100%
   border-color: rgba(0, 0, 0, 0.2)
-  >thead
+  > thead
     box-sizing: border-box
-    >tr
-      >th
+    > tr
+      > th
         font-weight: 800
         text-align: left
         padding: 8px
         border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-  >tbody
+  > tbody
     box-sizing: border-box
-    >tr
+    > tr
       padding: 0px
-      >td
+      > td
         padding: 8px
         vertical-align: top
         border-bottom: 1px solid rgba(0, 0, 0, 0.1)
       &:hover
         background-color: rgba(0, 0, 0, 0.1)
-
