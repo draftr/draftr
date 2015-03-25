@@ -1,9 +1,12 @@
 <div class="work-space-write">
-  <div ng-repeat="feed in feeds" class="feed" >
-    <div ng-repeat="article in feed.articles" class="article">
-    {{article.title}}
+
+  <div ng-repeat="item in feeds" class="article">
+  {{item.articles}}
+    <div ng-repeat="article in item.articles">
+        {{article.title}}
     </div>
   </div>
+
   <div class="write">
     <textarea class="write-input" ng-model="input" ng-change="inputChange()"></textarea>
   </div>
