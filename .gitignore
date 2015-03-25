@@ -4,4 +4,4 @@ node_modules
 public/deps
 distdump.rdb
 *.rdb
-public/css/style.css
+public/css/draftr.css
