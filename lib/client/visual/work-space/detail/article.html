@@ -1,4 +1,17 @@
-<section class="section">
-  <h1>Article</h1>
-  <a class="button" ui-sref="work-space-write({ id: entity.id })">Create</a>
+<a style="float:right;" class="button" ui-sref="work-space-write({ id: entity.id })">Create new</a>
+<section class="section" ng-show="!articles.length">
+  <h3>No Artikels found</h3>
+</section>
+<section class="section" ng-show="articles.length">
+  <div class="list" ng-repeat="item in articles">
+    <div class="title">
+      {{item.article.title}}
+    </div>
+    <div class="description">
+      {{item.article.url}}
+    </div>
+    <p class="body">
+      {{item.article.body}}
+    </p>
+  </div>
 </section>

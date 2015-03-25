@@ -31,11 +31,10 @@
         { path: 'draftr/controller/work-space/list',      name: 'WorkSpaceListController' },
         { path: 'draftr/controller/work-space/detail',    name: 'WorkSpaceDetailController' },
         { path: 'draftr/controller/work-space/write',     name: 'WorkSpaceWriteController' },
+        { path: 'draftr/controller/work-space/create',    name: 'WorkSpaceCreateController' },
         { path: 'draftr/controller/me/home',              name: 'MeHomeController' },
         { path: 'draftr/controller/me/profile/profile',   name: 'MeProfileController' },
         { path: 'draftr/controller/me/work-space/list',   name: 'MeWorkSpaceListController' },
-        { path: 'draftr/controller/me/work-space/create', name: 'MeWorkSpaceCreateController' },
-        { path: 'draftr/controller/me/work-space/update', name: 'MeWorkSpaceUpdateController' },
 
         { path: 'draftr/controller/work-space/detail/article', name: 'WorkSpaceDetailArticleController' },
         { path: 'draftr/controller/work-space/detail/feed',    name: 'WorkSpaceDetailFeedController' },

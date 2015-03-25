@@ -21,13 +21,13 @@
           <li ng-show="user.isAuthenticated" class="user" ui-sref-active="active">
             <a ui-sref="me.profile"><img ng-src="{{ user.image }}?size=40" class="image-circle"> {{ user.username }}</a>
           </li>
-          <li ng-show="user.isAuthenticated"><a ng-click="signOut()"><i class="fa fa-sign-out"></i> SignOut</a></li>
+          <li ng-show="user.isAuthenticated"><a ng-click="signOut()"><i class="fa fa-sign-out"></i> SignOut</a>
+          </li>
         </ul>
       </nav>
     </div>
   </header>
-  <main id="main" role="main">
-    <div ui-view></div>
+  <main id="main" role="main" ui-view>
   </main>
   <script src="/deps/requirejs/require.js" data-main="/js/init.js"></script>
 </body>

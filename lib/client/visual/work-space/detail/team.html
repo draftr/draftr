@@ -1,1 +1,20 @@
-team
+<section class="section" ng-show="!team.length">
+  <h3>No Artikels found</h3>
+</section>
+<section class="section" ng-show="team.length">
+  <div class="list" ng-repeat="item in team">
+    <div class="gravatar">
+      <img ng-src="{{ item.user.image }}?size=40" class="image-circle">
+    </div>
+    <div class="title">
+      {{item.user.username}}
+    </div>
+    <div class="description">
+      {{item.user.emailAddress}}
+    </div>
+    <div class="body">
+      <span class="badge badge-success" ng-show="item.isOwner">Owner</span>
+      <span class="badge" ng-show="item.isModerator">Moderator</span>
+    </div>
+  </div>
+</section>

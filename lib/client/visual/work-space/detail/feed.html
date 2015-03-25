@@ -1,1 +1,16 @@
-feed
+<section class="section" ng-show="!feeds.length">
+  <h3>No Feeds found</h3>
+</section>
+<section class="section" ng-show="feeds.length">
+  <div class="list" ng-repeat="item in feeds">
+    <div class="title">
+      {{item.url}}
+    </div>
+    <div class="description">
+      Created {{item.createdAt}}
+    </div>
+    <div class="body">
+      Articles <span class="badge badge-success">{{item.articles.length}}</span>
+    </div>
+  </div>
+</section>

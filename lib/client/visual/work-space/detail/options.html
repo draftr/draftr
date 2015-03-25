@@ -1,1 +1,137 @@
-options
+<div class="container">
+  <section class="section">
+    <h2>User</h2>
+    <form class="form">
+        <div class="error" ng-show="errUser">
+          {{ errUser.message }}
+        </div>
+        <div class="form-group">
+          <label for="user">User</label>
+          <input ng-model="search" type="text" id="user" placeholder="Name or EmailAddress">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="button button-success button-s" ng-click="addNewUser()">Add User</button>
+        </div>
+      </form>
+    <table class="table">
+      <thead>
+        <th>Name</th>
+        <th>Email-Adres</th>
+        <th>Rights</th>
+        <th>Status</th>
+        <th></th>
+      </thead>
+      <tbody ng-repeat="item in team" ng-show="team.length">
+        <tr>
+          <td>
+            {{ item.user.username }}
+          </td>
+          <td>
+            {{ item.user.emailAddress}}
+          </td>
+          <td>
+            <span class="badge badge-success" ng-show="item.isOwner">Owner</span>
+            <span class="badge" ng-show="item.isModerator">Moderator</span>
+          </td>
+          <td>
+            <span class="badge badge-success" ng-show="!item.isActive">Active</span>
+            <span class="badge badge-warning" ng-show="tem.isActive">Inactive</span>
+          </td>
+          <td>
+            <div class="action">
+              <a ng-hide="item.isOwner" ng-click="removeUser(item.user._id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tbody ng-show="!team.length">
+        <tr>
+          <td>Not Fount</td>
+        </tr>
+      </tbody>
+    </table>
+    </section>
+    <section class="section">
+      <h2>Feeds</h2>
+      <form class="form">
+        <div class="error" ng-show="errFeed">
+          {{ errFeed.message }}
+        </div>
+        <div class="form-group">
+          <label for="feed-url">Feed</label>
+          <input ng-model="feedUrl" type="text" id="feed-url" placeholder="Url">
+        </div>
+        <div class="form-group">
+          <button type="submit" class="button button-success button-s" ng-click="addNewFeed()">Add Feed</button>
+        </div>
+      </form>
+      <table class="table">
+        <thead>
+          <th>
+            Url
+          </th>
+          <th>Status</th>
+          <th>
+          </th>
+        </thead>
+        <tbody ng-repeat="item in feeds" ng-show="feeds.length">
+          <tr>
+            <td>
+              {{ item.url }}
+            </td>
+            <td>
+              <span class="badge badge-success" ng-show="item.isActive">Active</span>
+              <span class="badge badge-warning" ng-show="!item.isActive">Inactive</span>
+            </td>
+            <td>
+              <div class="action">
+                <a ng-show="item.isActive" ng-click="removeFeed(item.id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
+                <a ng-show="!item.isActive" ng-click="addFeed(item.id)" class="button button-xs button-success"><i class="fa fa-plus fa-lg"></i></a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tbody ng-show="!feeds.length">
+          <tr>
+            <td colspan="2">Not Feeds found</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+    <section class="section">
+    <h2>Article</h2>
+    <table class="table">
+      <thead>
+        <th>
+          Title
+        </th>
+        <th>
+          Url
+        </th>
+        <th>
+        </th>
+      </thead>
+      <tbody ng-repeat="item in articles" ng-show="articles.length">
+        <tr>
+          <td>
+            {{ item.article.title }}
+          </td>
+          <td>
+            {{ item.article.url }}
+          </td>
+          <td>
+            <div class="action">
+              <a ng-hide="item.isOwner" ng-click="removeArticle(item.article._id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
+              <a class="button button-xs"><i class="fa fa-pencil fa-lg"></i></a>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+      <tbody ng-show="!articles.length">
+        <tr>
+          <td colspan="3">Not Articles found</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+</div>

@@ -1,6 +1,4 @@
 <div class="container">
-  <h1>Work Spaces</h1>
-  <a class="button button-xs" ui-sref="me.work-space-create">Work Space erstellen</a>
   <section class="section">
     <table class="table table-striped">
       <thead>
@@ -28,14 +26,15 @@
             <ul class="team" ng-show="item.users">
               <li ng-repeat="entity in item.users">
                 <img ng-src="{{ entity.user.image }}?size=40" class="image-circle" alt="{{ entity.user.username }}">
+                <span ng-show="entity.isOwner">Owner</span>
+                <span ng-show="entity.isModerator" ng-hide="entity.isOwner">Moderator</span>
               </li>
             </ul>
           </td>
           <td >
             <div class="button-group">
               <a class="button button-xs" ui-sref="work-space-detail({ id: item.id })" ><i class="fa fa-eye fa-lg"></i></a>
-              <a ui-sref="me.work-space-update({ id: item.id })" class="button button-xs button-success"><i class="fa fa-pencil fa-lg"></i></a>
-              <a  ng-click="del(item.id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
+              <a ng-hide="item.owner" ng-click="del(item.id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
             </div>
           </td>
         </tr>

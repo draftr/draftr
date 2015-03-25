@@ -6,7 +6,7 @@
       <li ui-sref-active="active"><a ui-sref="work-space-detail.article">Articles</a></li>
       <li ui-sref-active="active"><a ui-sref="work-space-detail.feed">Feeds</a></li>
       <li ui-sref-active="active"><a ui-sref="work-space-detail.team">Team</a></li>
-      <li ui-sref-active="active"><a ui-sref="work-space-detail.options">Options</a></li>
+      <li ng-show="entity.userIsOwner" ui-sref-active="active"><a ui-sref="work-space-detail.options">Options</a></li>
     </ul>
   </div>
 </section>
