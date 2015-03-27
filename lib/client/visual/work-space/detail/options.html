@@ -1,5 +1,10 @@
 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-
+  <div class="success" ng-show="success">
+    <div class="alert alert-success fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      {{success.message}}
+    </div>
+  </div>
   <h2 class="page-header">Settings</h2>
    <form class="form-horizontal">
     <div class="form-group">
@@ -71,11 +76,13 @@
         <td>
           <span class="label label-success" ng-show="item.isOwner">Owner</span>
           <span class="label label-info" ng-show="item.isModerator">Moderator</span>
+          <span class="label label-warning" ng-show="item.isAdmin">WorkSpace Admin</span>
         </td>
         <td>
           <div class="action">
-            <a ng-hide="item.isOwner" ng-click="removeUser(item.user._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
-            <a ng-hide="item.isOwner" ng-click="toOwner(item.user._id)" class="btn btn-success btn-xs">To Owner</a>
+            <a ng-hide="item.isOwner || user.id == item.user._id" ng-click="toOwner(item.user._id)" class="btn btn-success btn-xs">To Owner</a>
+            <a ng-hide="item.isAdmin || !item.isOwner || right != 'admin' || user.id == item.user._id" ng-click="remouveOwner(item.user._id)" class="btn btn-warning btn-xs">Remouve Owner</a>
+            <a ng-hide="item.isAdmin || user.id == item.user._id" ng-click="removeUser(item.user._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
           </div>
         </td>
       </tr>
@@ -136,18 +143,12 @@
         Title
       </th>
       <th>
-        Url
-      </th>
-      <th>
       </th>
     </thead>
     <tbody>
       <tr ng-repeat="item in articles" ng-show="articles.length">
         <td>
           {{ item.article.title }}
-        </td>
-        <td>
-          {{ item.article.url }}
         </td>
         <td>
           <div class="action">
@@ -158,5 +159,6 @@
       </tr>
     </tbody>
   </table>
-
+  <hr>
+  <button ng-show="right == 'admin'" class="btn btn-danger" ng-click="deleteWorkSpace()"><i class="fa fa-trash-o"></i> Delete WokrSpace</button>
 </div>
