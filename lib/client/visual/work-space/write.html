@@ -3,12 +3,13 @@
 <div class="work-space-write">
   <div class="article">
     <div ng-repeat="feed in feeds">
+      <h3>{{feed.url}}</h3>
       <div ng-show="feed.articles.length" class="list-group" class="feed">
         <div ng-repeat="article in feed.articles"  class="list-group-item feed-article">
           <div class="feed-article-title">{{ article.title }}</div>
           <div class="feed-article-date">{{article.createdAt | date:'medium'}}</div>
           <div class="feed-article-body" ng-bind-html=" article.body"> ....</div>
-          <a class="btn btn-link pull-right" href="{{article.url}}">Open Article</a>
+          <a class="btn btn-link pull-right"  target="_blank" href="{{article.url}}">Go to Article</a>
           <div class="clearfix"></div>
         </div>
       </div>
