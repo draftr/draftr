@@ -1,36 +1,26 @@
 <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
-    <div class="post-preview" ng-show="workSpaces" ng-repeat="item in workSpaces">
-      <div class="row">
-        <div class="col-lg-10">
-          <a ui-sref="work-space-detail.article({ id: item.id })">
-            <h2 class="post-title">
-              {{ item.name }}
-            </h2>
-            <p class="post-subtitle">
-                {{item.description | limitTo: 270}}
-            </p>
-          </a>
-          <p class="post-meta">
-             <ul class="list-inline" ng-show="item.users">
-              <li ng-repeat="entity in item.users">
-                <img ng-src="{{ entity.user.image }}?size=40" class="img-circle user-img" alt="{{ entity.user.username }}">
-                <span ng-show="entity.isOwner">Owner</span>
-                <span ng-show="entity.isModerator" ng-hide="entity.isOwner">Moderator</span>
-              </li>
-            </ul>
+  <div ng-show="workSpaces" ng-repeat="item in workSpaces">
+     <div class="post-preview">
+      <a ui-sref="work-space-detail.article({ id: item.id })">
+          <h2 class="post-title">
+            {{ item.name }}
+          </h2>
+          <p class="post-subtitle">
+             {{item.description | limitTo: 270}}
           </p>
+      </a>
+      <p class="post-meta" ng-repeat="entity in item.users">
+        <img ng-src="{{ entity.user.image }}?size=40" class="img-circle user-img" alt="{{ entity.user.username }}">
+        {{ entity.user.username }}
+        <span class="label label-success" ng-show="entity.isOwner">Owner</span>
+        <span class="label label-info" ng-show="entity.isModerator">Moderator</span>
+        <span class="label label-warning" ng-show="entity.isAdmin">WorkSpace Admin</span>
+        <div class="btn-group" role="group" style="margin-top: 40px;">
+          <a class="btn btn-info" ui-sref="work-space-detail.article({ id: item.id })" ><i class="fa fa-eye fa-lg"></i> Show</a>
+          <a ng-hide="item.owner" ng-click="del(item.id)" class="btn btn-danger"><i class="fa fa-trash-o"></i> Leave</a>
         </div>
-        <div class="col-lg-2">
-          <div class="btn-group" role="group" style="margin-top: 40px;">
-            <a class="btn btn-info" ui-sref="work-space-detail.article({ id: item.id })" ><i class="fa fa-eye fa-lg"></i> Show</a>
-            <a ng-hide="item.owner" ng-click="del(item.id)" class="btn btn-danger"><i class="fa fa-trash-o"></i> Leave</a>
-          </div>
-        </div>
-      </div>
+      </p>
       <hr>
-    </div>
-    <div ng-show="!workSpaces">
-      <h2>No WorkSpaces</h2>
     </div>
   </div>
 </div>
