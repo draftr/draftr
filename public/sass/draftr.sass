@@ -1,311 +1,428 @@
 $fa-font-path: "/font/fa" !default
 
-@import "../deps/bourbon/app/assets/stylesheets/bourbon"
-@import "../deps/neat/app/assets/stylesheets/neat"
 @import "../deps/font-awesome/scss/font-awesome"
 @import "font/merriweather"
 @import "font/sourcesanspro"
 @import "font/sourcecodepro"
 
-$config-font-size: 18px
-
-$color-blue: #00a9e0
-$color-green: #01be7e
-$color-orange: #f08d3c
-$color-red: #e74c3c
-
-@import "button"
-
-=headline()
-  font-family: "Merriweather"
-  font-style: italic
-  letter-spacing: -1px
-
 body, html
   font-family: "Source Sans Pro"
-  font-size: $config-font-size
+  font-size: 16px
+  color: #404040
   margin: 0
   padding: 0
 
-.container
-  +outer-container(1200px)
+main
+  padding-bottom: 50px
 
 p
-  line-height: 1.6rem
+  line-height: 1.5
+  margin: 30px 0
+  a
+    text-decoration: underline
 
-=box-shadow($content)
-  -webkit-box-shadow: $content
-  -moz-box-shadow: $content
-  box-shadow: $content
+h1, h2, h3, h4, h5, h6
+  font-weight: 800
 
-=font-smoothing($content)
-  -webkit-font-smoothing: $content
-  -moz-font-smoothing: $content
-  font-smoothing: $content
+a
+  color: #404040
+  &:hover, &:focus
+    color: #0085a1
+  img
+    &:hover, &:focus
+      cursor: zoom-in
+
+blockquote
+  color: #808080
+  font-style: italic
+
+hr.small
+  max-width: 100px
+  margin: 15px auto
+  border-width: 4px
+  border-color: white
+
+.navbar-custom
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  z-index: 3
+  .navbar-brand
+    font-weight: 800
+  .nav li a
+    text-transform: uppercase
+    font-size: 16px
+    font-weight: 800
+    letter-spacing: 1px
+
+@media only screen and (min-width: 768px)
+  .navbar-custom
+    background: transparent
+    border-bottom: 1px solid transparent
+    .navbar-brand
+      font-size: 30px
+      color: white
+      padding: 20px
+      &:hover, &:focus
+        color: rgba(255, 255, 255, 0.8)
+    .nav li a
+      color: white
+      height: 60px
+      padding: 20px
+  .user
+    display: inline-block
+    margin-bottom: 0
+    vertical-align: middle
+  .navbar-custom .nav li a
+    img
+      margin-top: -5px
+    &:hover, &:focus
+      color: rgba(255, 255, 255, 0.8)
+
+@media only screen and (min-width: 1170px)
+  .navbar-custom
+    -webkit-transition: background-color 0.3s
+    -moz-transition: background-color 0.3s
+    transition: background-color 0.3s
+    -webkit-transform: translate3d(0, 0, 0)
+    -moz-transform: translate3d(0, 0, 0)
+    -ms-transform: translate3d(0, 0, 0)
+    -o-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    &.is-fixed
+      position: fixed
+      top: -61px
+      background-color: rgba(255, 255, 255, 0.5)
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+      -webkit-transition: -webkit-transform 0.3s
+      -moz-transition: -moz-transform 0.3s
+      transition: transform 0.3s
+      .navbar-brand
+        color: #404040
+        &:hover, &:focus
+          color: #0085a1
+      .nav li a
+        color: #404040
+        &:hover, &:focus
+          color: #0085a1
+    &.is-visible
+      -webkit-transform: translate3d(0, 100%, 0)
+      -moz-transform: translate3d(0, 100%, 0)
+      -ms-transform: translate3d(0, 100%, 0)
+      -o-transform: translate3d(0, 100%, 0)
+      transform: translate3d(0, 100%, 0)
+
+.intro-header
+  background-color: #808080
+  background: no-repeat center center
+  background-attachment: scroll
+  -webkit-background-size: cover
+  -moz-background-size: cover
+  background-size: cover
+  -o-background-size: cover
+  margin-bottom: 50px
+  .site-heading, .post-heading, .page-heading
+    padding: 100px 0 50px
+    color: white
+  .site-heading, .page-heading
+    text-align: center
+  .site-heading h1, .page-heading h1
+    margin-top: 0
+    font-size: 50px
+  .site-heading .subheading, .page-heading .subheading
+    font-size: 24px
+    line-height: 1.1
+    display: block
+    font-weight: 300
+    margin: 10px 0 0
+  .site-heading .subheading .nav
+  .post-heading
+    h1
+      font-size: 30px
+    .subheading, .meta
+      line-height: 1.1
+      display: block
+    .subheading
+      font-size: 20px
+      margin: 10px 0 30px
+      font-weight: 600
+    .meta
+      font-style: italic
+      font-weight: 300
+      font-size: 20px
+      a
+        color: white
+
+@media only screen and (min-width: 768px)
+  .intro-header
+    .site-heading, .post-heading, .page-heading
+      padding: 150px 0
+
+@media only screen and (min-width: 768px)
+  .intro-header
+    .site-heading h1, .page-heading h1
+      font-size: 50px
+
+@media only screen and (min-width: 768px)
+  .intro-header .post-heading
+    h1
+      font-size: 55px
+    .subheading
+      font-size: 30px
+
+.post-preview >
+  a
+    color: #404040
+    &:hover, &:focus
+      text-decoration: none
+      color: #0085a1
+    >
+      .post-title
+        word-wrap: break-word
+        font-size: 30px
+        margin-top: 30px
+        margin-bottom: 10px
+      .post-subtitle
+        margin: 0
+        font-weight: 400
+        margin-bottom: 10px
+        font-size: 18px
+  .post-meta
+    color: #808080
+    font-size: 18px
+    font-style: italic
+    margin-top: 0
+    > a
+      text-decoration: none
+      color: #404040
+      &:hover, &:focus
+        color: #0085a1
+        text-decoration: underline
+
+.section-heading
+  font-size: 36px
+  margin-top: 60px
+  font-weight: 700
+
+.caption
+  text-align: center
+  font-size: 14px
+  padding: 10px
+  font-style: italic
+  margin: 0
+  display: block
+  border-bottom-right-radius: 5px
+  border-bottom-left-radius: 5px
+
+.btn
+  text-transform: uppercase
+  font-size: 14px
+  font-weight: 800
+  letter-spacing: 1px
+  border-radius: 0
+
+.btn-lg
+  font-size: 16px
+  padding: 25px 35px
+
+.btn-default
+  &:hover, &:focus
+    background-color: #0085a1
+    border: 1px solid #0085a1
+    color: white
+
+.pager
+  margin: 20px 0 0
+  li >
+    a, span
+      text-transform: uppercase
+      font-size: 14px
+      font-weight: 800
+      letter-spacing: 1px
+      padding: 15px 25px
+      background-color: white
+      border-radius: 0
+    a
+      &:hover, &:focus
+        color: white
+        background-color: #0085a1
+        border: 1px solid #0085a1
+  .disabled >
+    a
+      color: #808080
+      background-color: #404040
+      cursor: not-allowed
+      &:hover, &:focus
+        color: #808080
+        background-color: #404040
+        cursor: not-allowed
+    span
+      color: #808080
+      background-color: #404040
+      cursor: not-allowed
+
+\::-moz-selection, ::selection
+  color: white
+  text-shadow: none
+  background: #0085a1
+
+img
+  &::selection, &::-moz-selection
+    color: white
+    background: transparent
+
+body
+  webkit-tap-highlight-color: #0085a1
+
+.user-img
+  margin-right: 5px
+
+.navbar-default .navbar-nav > .active > a
+  background: transparent
+  color: #0085a1
+  border-bottom: 3px solid #0085a1
+  &:hover, &:focus
+    background: transparent
+    color: #0085a1
+    border-bottom: 3px solid #0085a1
+
+.nav-tabs > li > a
+  color: rgba(255, 255, 255, 0.8)
+  &:hover
+    color: white
+    background-color: transparent
+    border-color: transparent
+
+.work-space-write
+  .article
+    padding: 0
+    position: fixed
+    top: 60px
+    bottom: 60px
+    left: 0
+    width: 34%
+    display: block
+    overflow-x: hidden
+    overflow-y: auto
+  .editor
+    padding: 10px
+    position: fixed
+    top: 60px
+    bottom: 60px
+    left: 34%
+    right: 33%
+    width: 33%
+    display: block
+    overflow-x: hidden
+    overflow-y: auto
+  .preview
+    position: fixed
+    top: 60px
+    bottom: 60px
+    right: 0
+    width: 33%
+    display: block
+    overflow-x: hidden
+    overflow-y: auto
+
+.editor-title
+  font-size: 20px
+  position: absolute
+  right: 0
+  left: 0
+  top: 0
+
+.editor-body
+  background-color: rgba(0, 0, 0, 0.02)
+  position: absolute
+  bottom: 0
+  right: 0
+  left: 0
+  top: 54px
+
+.work-space-write .editor textarea
+  border-radius: 0px
+  border-top: 0px
+  border-bottom: 0px
+  resize: none
+
+.editor .form-control
+  border-radius: 0px
+
+.editor-footer
+  padding: 10px
+  position: fixed
+  bottom: 0
+  left: 0
+  right: 0
+  width: 100%
+  height: 60px
+  border-top: 1px solid rgba(0, 0, 0, 0.1)
+
+.preview-title
+  padding: 5px
+  font-size: 20px
+  position: absolute
+  right: 0
+  left: 0
+  top: 0
+  height: 54px
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+.preview-body
+  padding: 5px
+  position: absolute
+  right: 0
+  left: 0
+  top: 54px
+  bottom: 0px
+
+.preview-title p
+  margin: 0px
 
 a
   cursor: pointer
 
-#header
-  width: 100%
-  position: absolute
-  +outer-container(100%)
-  background-color: $color-blue
-  +box-shadow(inset rgba(0, 0, 0, 0.1) 0 -4px 0)
-  height: 110px
-  .container
-    position: relative
-  #logo
-    position: absolute
-    left: 0
-    top: 36px
-    h1
-      +headline()
-      margin: 0
-      padding: 0
-      a
-        color: #ffffff
-        text-decoration: none
-  #nav
-    position: absolute
-    right: 0
-    top: 34px
-    height: 44px
-    line-height: 44px
-    ul
-      +clearfix
-      list-style-type: none
-      margin: 0
-      padding: 0
-      +font-smoothing(antialiased)
-      li
-        float: left
-        margin: 0 26px
-        text-transform: uppercase
-        &:first-child
-          margin-left: 0
-        &:last-child
-          margin-right: 0
-        &.active
-          a
-            border-bottom: 2px solid rgba(0, 0, 0, 0.2)
-        a
-          font-weight: 600
-          color: #ecf0f1
-          text-decoration: none
-          &:hover
-            border-bottom: 2px solid rgba(0, 0, 0, 0.2)
-        &.user
-          font-family: "Merriweather"
-          font-style: italic
-          letter-spacing: -1px
-          color: #ffffff
-          text-transform: none
-          font-weight: 800
-          img
-            margin: 0 5px 0 0
-            border: 3px solid rgba(0, 0, 0, 0.1)
-.user
-  font-family: "Merriweather"
-  font-style: italic
-  letter-spacing: -1px
+.alert
+  position: fixed
+  z-index: 1000
+  top: 100px
+  left: 33%
+  width: 33%
 
-#main
-  padding-bottom: 50px
-  padding-top: 110px
-  .section
-    +clearfix
-    margin-bottom: 2rem
-    &:last-child
-      margin-bottom: 0
-    &:first-child
-      margin-top: 50px
-  .hero
-    &.work-space
-      top: -22px
-      position: relative
-      width: 100%
-      height: 400px
-      background-image: url("/img/hero-1.jpg")
-      background-size: 100% 400px
-      background-repeat: no-repeat
-      .container
-        position: relative
-        top: 120px
-        color: #ffffff
-        h1
-          +headline()
-      .tab-list
-        position: absolute
-        top: 235px
+.list-group
+  margin-top: 0px
 
+.list-group-item
+  border-left: 0px
+  border-right: 0px
+  border-top: 1px solid rgba(0, 0, 0, 0.2)
+  border-bottom: 0px
+  &:last-child
+    margin-bottom: 0
+    border-bottom-right-radius: 0px
+    border-bottom-left-radius: 0px
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+  &:first-child
+    margin-bottom: 0
+    border-bottom-right-radius: 0px
+    border-bottom-left-radius: 0px
 
-
-
-ul.tab-list
-  list-style-type: none
-  margin: 0
-  padding: 0
-  li
-    float: left
-    &.active
-      a
-        background-color: #ffffff
-        color: $color-blue
-    a
-      display: inline-block
-      height: 45px
-      line-height: 45px
-      padding: 0 30px
-      border: 3px solid #ffffff
-      border-bottom: none
-      color: #ffffff
-      text-decoration: none
-      margin: 0 10px 0 0
-      background-color: rgba(0, 0, 0, 0.3)
-      &:hover
-        background-color: #ffffff
-        color: $color-blue
-a
-  color: $color-blue
-  text-decoration: none
-  &:hover
-    text-decoration: none
-
-.image-circle
-  +border-top-radius(100%)
-  +border-bottom-radius(100%)
-  +border-left-radius(100%)
-  +border-right-radius(100%)
-
-.work-space, .team
-  list-style-type: none
-  margin: 0
-  padding: 0
-.work-space
-  > li
-    border-top: 1px solid rgba(0, 0, 0, 0.2)
-    border-right: 1px solid rgba(0, 0, 0, 0.2)
-    border-left: 1px solid rgba(0, 0, 0, 0.2)
-    +clearfix
-    padding: 20px 30px
-    +transition(box-shadow 100ms ease-in 0s)
-    &:first-child
-      +border-top-radius(3px)
-    &:last-child
-      +border-bottom-radius(3px)
-      border-bottom: 1px solid rgba(0, 0, 0, 0.2)
-    h2
-      +headline()
-    &:hover
-      box-shadow: inset 4px 0 0 0 $color-blue
-  li
-    .info
-      +span-columns(12)
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-      padding-bottom: 10px
-      margin-bottom: 20px
-    .team
-      +span-columns(10)
-      li
-        float: left
-        margin-right: 5px
-        &:last-child
-          margin-right: 0
-    .action
-      +span-columns(2)
-
-.work-space-write
-  .feed
-    position: fixed
-    top: 110px
-    bottom: 0
-    left: 0
-    width: 33.33%
-  .write
-    position: fixed
-    top: 110px
-    bottom: 0
-    left: 33.33%
-    .write-input
-      width: 100%
-      height: 100%
-      border: 0
-      font-family: "Source Code Pro"
-      outline: none
-      padding: 2rem
-      line-height: 1.7rem
-      background-color: rgba(0, 0, 0, 0.01)
-      resize: none
-  .preview
-    position: fixed
-    top: 110px
-    right: 0
-    bottom: 0
-    width: 33.33%
-    padding: 2rem
-    h1
-      &:first-child
-        padding-top: 0
-        margin-top: 0
-    h1, h2, h3, h4, h5, h6
-      +headline()
-
-.table
-  background-color: transparent
-  width: 100%
-  max-width: 100%
-  border-color: rgba(0, 0, 0, 0.2)
-  > thead
-    box-sizing: border-box
-    > tr
-      > th
-        font-weight: 800
-        text-align: left
-        padding: 8px
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-  > tbody
-    box-sizing: border-box
-    > tr
-      padding: 0px
-      > td
-        padding: 8px
-        vertical-align: top
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-      &:hover
-        background-color: rgba(0, 0, 0, 0.1)
-.list
-  padding: 2rem 2rem 1rem 2rem
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
-  .title
-    font-weight: 600
-    font-size: 1.2rem
-  .description
-    font-size: 0.8rem
-    color: rgba(0, 0, 0, 0.6)
-  .body
-    padding-top: 10px
-    color: rgba(0, 0, 0, 0.8)
-  .gravatar
-    margin-right: 10px
-    float: left
-.badge
-  margin-top: -5px
-  display: inline-block
-  min-width: 10px
-  padding: 3px 7px
-  font-size: 0.8rem
+.feed-article-title
+  font-size: 20px
   font-weight: 600
-  line-height: 1
-  color: #fff
-  text-align: center
-  white-space: nowrap
-  vertical-align: baseline
-  background-color: $color-blue
-  border-radius: 10px
-  &.badge-success
-    background-color: $color-green !important
-  &.badge-warning
-    background-color: $color-orange !important
-  &.badge-danger
-    background-color: $color-red !important
+
+.feed-article-date
+  font-size: 16px
+  font-weight: 300
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+
+.feed-article-body
+  margin-top: 10px
+  margin-bottom: 10px
+
+.nav-tabs
+  border-bottom: 0px

@@ -1,20 +1,43 @@
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <span class="subheading">Create a new Workspaces</span>
+                    <hr class="small">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="container">
-  <section class="section">
-    <form class="form">
-      <div class="error" ng-show="err">
-        {{ err.message }}
-      </div>
-      <div class="form-group">
-        <label for="work-space-name">Name</label>
-        <input ng-model="name" type="text" id="work-space-name" placeholder="name">
-      </div>
-      <div class="form-group">
-        <label for="work-space-description">Description</label>
-        <textarea ng-model="description" id="work-space-description">{{workSpace.description}}</textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit" class="button button-success button-s" ng-click="create()">Create</button>
-      </div>
-    </form>
-  </section>
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+      <form class="form-horizontal">
+        <div class="error" ng-show="err">
+          <div class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            {{ err.message }}.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="work-space-name" class="col-sm-2 control-label">Name</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="name" class="form-control" id="work-space-name" placeholder="name">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="work-space-description" class="col-sm-2 control-label">Description</label>
+          <div class="col-sm-10">
+            <input type="text" ng-model="description" class="form-control" id="work-space-description" placeholder="Description">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-success" ng-click="create()">Create</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

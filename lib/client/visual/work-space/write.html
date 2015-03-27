@@ -1,14 +1,31 @@
+<div ng-show="success" class="alert alert-success" role="alert">Article saved</div>
+<div ng-show="err" class="alert alert-danger" role="alert">{{err.message}}</div>
 <div class="work-space-write">
-
-  <div ng-repeat="item in feeds" class="article">
-  {{item.articles}}
-    <div ng-repeat="article in item.articles">
-        {{article.title}}
+  <div class="article">
+    <div ng-repeat="feed in feeds">
+      <div ng-show="feed.articles.length" class="list-group" class="feed">
+        <div ng-repeat="article in feed.articles"  class="list-group-item feed-article">
+          <div class="feed-article-title">{{ article.title }}</div>
+          <div class="feed-article-date">{{article.createdAt | date:'medium'}}</div>
+          <div class="feed-article-body" ng-bind-html=" article.body"> ....</div>
+          <a class="btn btn-link pull-right" href="{{article.url}}">Open Article</a>
+          <div class="clearfix"></div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <div class="write">
-    <textarea class="write-input" ng-model="input" ng-change="inputChange()"></textarea>
+  <div class="editor clearfix">
+      <textarea  maxlength="50" ng-model="title" class="form-control editor-title" placeholder="Title" ng-change="inputTitleChange()">
+      </textarea>
+      <textarea ng-model="input" ng-change="inputChange()" class="form-control editor-body">
+      </textarea>
   </div>
-  <div class="preview" ng-bind-html="preview"></div>
+  <div class="preview clearfix">
+    <div class="preview-title" ng-bind-html="previewTitle"></div>
+    <div class="preview-body" ng-bind-html="preview"></div>
+  </div>
+  <div class="editor-footer">
+    <button class="btn btn-info pull"  ui-sref="work-space-detail.article({ id: id })"><i class="fa fa-arrow-left"></i> Back</button>
+    <button type="submit" class="btn btn-success pull-right" ng-click="saveArticle()"><i class="fa fa-floppy-o fa-lg"></i> Save</button>
+  </div>
 </div>

@@ -1,20 +1,20 @@
-<section class="section" ng-show="!team.length">
-  <h3>No Artikels found</h3>
-</section>
-<section class="section" ng-show="team.length">
-  <div class="list" ng-repeat="item in team">
-    <div class="gravatar">
-      <img ng-src="{{ item.user.image }}?size=40" class="image-circle">
-    </div>
-    <div class="title">
-      {{item.user.username}}
-    </div>
-    <div class="description">
-      {{item.user.emailAddress}}
-    </div>
-    <div class="body">
-      <span class="badge badge-success" ng-show="item.isOwner">Owner</span>
-      <span class="badge" ng-show="item.isModerator">Moderator</span>
-    </div>
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <section class="section" ng-show="!team.length">
+    <h3>No team found</h3>
+  </section>
+  <div class="post-preview"  ng-repeat="item in team">
+    <a>
+      <h2 class="post-title">
+        <img ng-src="{{ item.user.image }}?size=40" class="img-circle user-img">{{item.user.username}}
+      </h2>
+      <p class="post-subtitle">
+        {{item.user.emailAddress}}
+      </p>
+    </a>
+    <p class="post-meta">
+      <span class="label label-success" ng-show="item.isOwner">Owner</span>
+      <span class="label label-info" ng-show="item.isModerator">Moderator</span>
+    </p>
   </div>
-</section>
+  <hr>
+</div>

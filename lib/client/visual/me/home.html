@@ -1,9 +1,22 @@
+<header class="intro-header" style="background-image: url('img/about-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Welcome {{user.username}}</h1>
+                    <hr class="small">
+                    <span class="subheading">Manage your Profile</span>
+                </div>
+                <ul class="nav nav-tabs">
+                  <li ui-sref-active="active"><a ui-sref="me.profile">Profile</a></li>
+                  <li ui-sref-active="active"><a ui-sref="me.work-space-list">Workspaces</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="container">
-  <section class="section">
-    <ul class="tab-list">
-      <li ui-sref-active="active"><a ui-sref="me.profile">Profile</a></li>
-      <li ui-sref-active="active"><a ui-sref="me.work-space-list">Workspaces</a></li>
-    </ul>
-  </section>
-  <div ui-view="inner"></div>
+  <div class="row">
+    <div ui-view="inner"></div>
+  </div>
 </div>

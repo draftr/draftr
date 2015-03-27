@@ -1,137 +1,162 @@
-<div class="container">
-  <section class="section">
-    <h2>User</h2>
-    <form class="form">
-        <div class="error" ng-show="errUser">
-          {{ errUser.message }}
+<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+
+  <h2 class="page-header">Settings</h2>
+   <form class="form-horizontal">
+    <div class="form-group">
+      <div class="error" ng-show="err">
+        <div class="alert alert-warning alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <strong>Ups!</strong> {{ err.message }}.
         </div>
-        <div class="form-group">
-          <label for="user">User</label>
-          <input ng-model="search" type="text" id="user" placeholder="Name or EmailAddress">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="name" class="col-sm-2 control-label">Name</label>
+      <div class="col-sm-10">
+        <input style="min-width: 400px;" type="text" ng-model="entity.name" class="form-control" id="name" placeholder="Name">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="description" class="col-sm-2 control-label">Description</label>
+      <div class="col-sm-10">
+        <textarea ng-model="entity.description" class="form-control" id="description" rows="5"></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-success"ng-click="updateWorkSpace()"><i class="fa fa-refresh"></i> Update</button>
+      </div>
+    </div>
+  </form>
+
+  <h2 class="page-header">Users</h2>
+
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="error" ng-show="errUser">
+        <div class="alert alert-warning alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <strong>Ups!</strong> {{ errUser.message }}.
         </div>
-        <div class="form-group">
-          <button type="submit" class="button button-success button-s" ng-click="addNewUser()">Add User</button>
+      </div>
+      <label for="user" class="col-sm-3 control-label">Name / Email</label>
+      <div class="col-sm-9">
+        <input style="min-width: 400px;" type="text" ng-model="search" class="form-control" id="user" placeholder="Name / Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <button type="submit" class="btn btn-success"ng-click="addNewUser()"><i class="fa fa-plus"></i> Add User</button>
+      </div>
+    </div>
+  </form>
+
+  <hr>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>Name</th>
+      <th>Email-Adres</th>
+      <th>Rights</th>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in team" ng-show="team.length">
+        <td>
+          {{ item.user.username }}
+        </td>
+        <td>
+          {{ item.user.emailAddress}}
+        </td>
+        <td>
+          <span class="label label-success" ng-show="item.isOwner">Owner</span>
+          <span class="label label-info" ng-show="item.isModerator">Moderator</span>
+        </td>
+        <td>
+          <div class="action">
+            <a ng-hide="item.isOwner" ng-click="removeUser(item.user._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
+            <a ng-hide="item.isOwner" ng-click="toOwner(item.user._id)" class="btn btn-success btn-xs">To Owner</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="page-header">Feeds</h2>
+
+  <form class="form-inline">
+    <div class="form-group">
+      <div class="error" ng-show="errFeed">
+        <div class="alert alert-warning alert-dismissible fade in" role="alert">
+          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <strong>Ups!</strong> {{ errFeed.message }}.
         </div>
-      </form>
-    <table class="table">
-      <thead>
-        <th>Name</th>
-        <th>Email-Adres</th>
-        <th>Rights</th>
-        <th>Status</th>
-        <th></th>
-      </thead>
-      <tbody ng-repeat="item in team" ng-show="team.length">
-        <tr>
-          <td>
-            {{ item.user.username }}
-          </td>
-          <td>
-            {{ item.user.emailAddress}}
-          </td>
-          <td>
-            <span class="badge badge-success" ng-show="item.isOwner">Owner</span>
-            <span class="badge" ng-show="item.isModerator">Moderator</span>
-          </td>
-          <td>
-            <span class="badge badge-success" ng-show="!item.isActive">Active</span>
-            <span class="badge badge-warning" ng-show="tem.isActive">Inactive</span>
-          </td>
-          <td>
-            <div class="action">
-              <a ng-hide="item.isOwner" ng-click="removeUser(item.user._id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-      <tbody ng-show="!team.length">
-        <tr>
-          <td>Not Fount</td>
-        </tr>
-      </tbody>
-    </table>
-    </section>
-    <section class="section">
-      <h2>Feeds</h2>
-      <form class="form">
-        <div class="error" ng-show="errFeed">
-          {{ errFeed.message }}
-        </div>
-        <div class="form-group">
-          <label for="feed-url">Feed</label>
-          <input ng-model="feedUrl" type="text" id="feed-url" placeholder="Url">
-        </div>
-        <div class="form-group">
-          <button type="submit" class="button button-success button-s" ng-click="addNewFeed()">Add Feed</button>
-        </div>
-      </form>
-      <table class="table">
-        <thead>
-          <th>
-            Url
-          </th>
-          <th>Status</th>
-          <th>
-          </th>
-        </thead>
-        <tbody ng-repeat="item in feeds" ng-show="feeds.length">
-          <tr>
-            <td>
-              {{ item.url }}
-            </td>
-            <td>
-              <span class="badge badge-success" ng-show="item.isActive">Active</span>
-              <span class="badge badge-warning" ng-show="!item.isActive">Inactive</span>
-            </td>
-            <td>
-              <div class="action">
-                <a ng-show="item.isActive" ng-click="removeFeed(item.id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
-                <a ng-show="!item.isActive" ng-click="addFeed(item.id)" class="button button-xs button-success"><i class="fa fa-plus fa-lg"></i></a>
-              </div>
-            </td>
-          </tr>
-        </tbody>
-        <tbody ng-show="!feeds.length">
-          <tr>
-            <td colspan="2">Not Feeds found</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-    <section class="section">
-    <h2>Article</h2>
-    <table class="table">
-      <thead>
-        <th>
-          Title
-        </th>
-        <th>
-          Url
-        </th>
-        <th>
-        </th>
-      </thead>
-      <tbody ng-repeat="item in articles" ng-show="articles.length">
-        <tr>
-          <td>
-            {{ item.article.title }}
-          </td>
-          <td>
-            {{ item.article.url }}
-          </td>
-          <td>
-            <div class="action">
-              <a ng-hide="item.isOwner" ng-click="removeArticle(item.article._id)" class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
-              <a class="button button-xs"><i class="fa fa-pencil fa-lg"></i></a>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-      <tbody ng-show="!articles.length">
-        <tr>
-          <td colspan="3">Not Articles found</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+      </div>
+      <label for="deed" class="col-sm-3 control-label">Feed Url</label>
+      <div class="col-sm-9">
+        <input style="min-width: 400px;"  type="text" ng-model="feedUrl" class="form-control" id="deed" placeholder="Feed">
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-9">
+        <button type="submit" class="btn btn-success" ng-click="addFeed()"><i class="fa fa-plus"></i> Add Feed</button>
+      </div>
+    </div>
+  </form>
+
+  <hr>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>
+        Url
+      </th>
+      <th>
+      </th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in feeds" ng-show="feeds.length">
+        <td>
+          {{ item.url }}
+        </td>
+        <td>
+          <div class="action">
+            <a ng-click="removeFeed(item._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="page-header">Article</h2>
+
+  <table class="table table-bordered table-hover">
+    <thead>
+      <th>
+        Title
+      </th>
+      <th>
+        Url
+      </th>
+      <th>
+      </th>
+    </thead>
+    <tbody>
+      <tr ng-repeat="item in articles" ng-show="articles.length">
+        <td>
+          {{ item.article.title }}
+        </td>
+        <td>
+          {{ item.article.url }}
+        </td>
+        <td>
+          <div class="action">
+            <a ng-click="removeArticle(item.article._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
+            <a ui-sref="work-space-write({ id: entity.id, articleId: item.article._id })"class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>

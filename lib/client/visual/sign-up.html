@@ -1,24 +1,52 @@
+<header class="intro-header" style="background-image: url('img/hero-2.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>Sign up for Draftr</h1>
+                    <hr class="small">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="container">
-  <section class="section">
-    <form class="form">
-      <div class="error" ng-show="err">
-        {{ err.message }}
+  <div class="row">
+    <div class="col-lg-6 col-lg-offset-3 col-md-10 col-md-offset-1">
+      <form class="form-horizontal">
+        <div class="error" ng-show="err">
+          <div class="alert alert-warning alert-dismissible fade in" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+            {{ err.message }}.
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sign-up-username" class="col-sm-3 control-label">Username</label>
+          <div class="col-sm-9">
+            <input type="text" ng-model="username" class="form-control" id="sign-in-username" placeholder="Username">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sign-up-emailAddress" class="col-sm-3 control-label">EmailAddress</label>
+          <div class="col-sm-9">
+            <input type="email" ng-model="emailAddress" class="form-control" id="sign-in-emailAddress" placeholder="EmailAddress">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="sign-up-password" class="col-sm-3 control-label">Password</label>
+          <div class="col-sm-9">
+            <input type="password" ng-model="password" class="form-control" id="sign-in-password" placeholder="Password">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-3 col-sm-10">
+            <button type="submit" class="btn btn-success" ng-click="signUp()">SignUp</button>
+          </div>
+        </div>
+      </form>
+      <div ng-show="isAuthenticated">
+        <h1>You are already authenticated.</h1>
       </div>
-      <div class="form-group">
-        <label for="sign-up-username">Username</label>
-        <input ng-model="username" type="text" id="sign-up-username" placeholder="Username">
-      </div>
-      <div class="form-group">
-        <label for="sign-up-username">Email-Address</label>
-        <input ng-model="emailAddress" type="text" id="sign-up-emailAddress" placeholder="Email-Adress">
-      </div>
-      <div class="form-group">
-        <label for="sign-up-password">Password</label>
-        <input ng-model="password" type="password" id="sign-up-password" placeholder="Password">
-      </div>
-      <div class="form-group">
-        <button type="submit" class="button button-success button-s" ng-click="signUp()">SignUp</button>
-      </div>
-    </form>
-  </section>
+    </div>
+  </div>
 </div>

@@ -4,29 +4,42 @@
   <title>draftr</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="/deps/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="/css/draftr.css">
   <base href="/">
 </head>
 <body>
-  <header id="header" ng-controller="HeaderController">
-    <div class="container">
-      <div id="logo">
-        <h1><a ui-sref="home">draftr</a></h1>
-      </div>
-      <nav id="nav">
-        <ul>
-          <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
-          <li ng-show="user.isAuthenticated" ui-sref-active="active"><a ui-sref="work-space">Workspaces</a></li>
-          <li ng-hide="user.isAuthenticated" ui-sref-active="active"><a ui-sref="signin">SignIn</a> or <a ui-sref="signup">SignUp</a></li>
-          <li ng-show="user.isAuthenticated" class="user" ui-sref-active="active">
-            <a ui-sref="me.profile"><img ng-src="{{ user.image }}?size=40" class="image-circle"> {{ user.username }}</a>
-          </li>
-          <li ng-show="user.isAuthenticated"><a ng-click="signOut()"><i class="fa fa-sign-out"></i> SignOut</a>
-          </li>
-        </ul>
-      </nav>
+  <nav class="navbar navbar-default navbar-custom navbar-fixed-top  is-fixed is-visible" ng-controller="HeaderController">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" ui-sref="home">draftr</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li ui-sref-active="active"><a ui-sref="home">Home</a></li>
+                <li ng-show="user.isAuthenticated" ui-sref-active="active"><a ui-sref="work-space">Workspaces</a></li>
+                <li ng-hide="user.isAuthenticated" ui-sref-active="active"><a ui-sref="signin"><i class="fa fa-sign-in"></i>SignIn</a></li>
+                <li ng-hide="user.isAuthenticated" ui-sref-active="active"><a ui-sref="signup">SignUp</a></li>
+                <li ng-show="user.isAuthenticated" ui-sref-active="active">
+                  <a class="user" ui-sref="me"><img ng-src="{{ user.image }}?size=25" class="img-circle user-img"> {{ user.username }}</a>
+                </li>
+                <li ng-show="user.isAuthenticated"><a ng-click="signOut()"><i class="fa fa-sign-out"></i> SignOut</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
     </div>
-  </header>
+    <!-- /.container -->
+  </nav>
   <main id="main" role="main" ui-view>
   </main>
   <script src="/deps/requirejs/require.js" data-main="/js/init.js"></script>

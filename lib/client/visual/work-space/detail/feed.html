@@ -1,16 +1,18 @@
-<section class="section" ng-show="!feeds.length">
-  <h3>No Feeds found</h3>
-</section>
-<section class="section" ng-show="feeds.length">
-  <div class="list" ng-repeat="item in feeds">
-    <div class="title">
+
+<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+  <section class="section" ng-show="!feeds.length">
+    <h3>No Feeds found</h3>
+  </section>
+  <div class="post-preview" ng-repeat="item in feeds">
+    <a>
+      <h2 class="post-title">
       {{item.url}}
-    </div>
-    <div class="description">
-      Created {{item.createdAt}}
-    </div>
-    <div class="body">
+      </h2>
+      <p class="post-subtitle">
       Articles <span class="badge badge-success">{{item.articles.length}}</span>
-    </div>
+      </p>
+    </a>
+    <p class="post-meta">Created {{item.createdAt}}</p>
+    <hr>
   </div>
-</section>
+</div>

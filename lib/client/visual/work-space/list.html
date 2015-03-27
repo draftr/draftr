@@ -1,24 +1,38 @@
+<header class="intro-header" style="background-image: url('img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="site-heading">
+                    <h1>My Workspaces</h1>
+                    <hr class="small">
+                    <span class="subheading">All your available Workspaces</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
 <div class="container">
-  <section class="section">
-    <a ui-sref="work-space-create" class="button button-xs">Create Workspace</a>
-  <section class="section">
-  <section class="section">
-    <ul class="work-space">
-      <li ng-repeat="item in list">
-        <div class="info">
-          <h2>{{ item.name }}</h2>
-          <p ng-show="item.description">{{ item.description | limitTo : 270 }}</p>
-        </div>
-        <ul class="team" ng-show="item.users">
-          <li ng-repeat="entity in item.users">
-            <img ng-src="{{ entity.user.image }}?size=40" class="image-circle" alt="{{ entity.user.username }}">
-          </li>
-        </ul>
-        <div class="action">
-          <a ui-sref="work-space-detail.article({ id: item.id })" class="button button-xs"><i class="fa fa-eye fa-lg"></i></a>
-          <a class="button button-xs button-danger"><i class="fa fa-trash-o fa-lg"></i></a>
-        </div>
-      </li>
-    </ul>
-  </section>
+  <a style="float:right;" class="btn btn-default" ui-sref="work-space-create"><i class="fa fa-pencil"></i> New Workspace</a>
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <div class="post-preview" ng-repeat="item in list">
+        <a ui-sref="work-space-detail.article({ id: item.id })">
+          <h2 class="post-title">
+            {{ item.name }}
+          </h2>
+          <p class="post-subtitle">
+            {{ item.description | limitTo : 270 }}
+          </p>
+        </a>
+        <p class="post-meta">
+           <ul class="list-inline" ng-show="item.users">
+            <li ng-repeat="entity in item.users">
+              <img ng-src="{{ entity.user.image }}?size=40" class="img-circle user-img" alt="{{ entity.user.username }}">
+            </li>
+          </ul>
+        </p>
+        <hr>
+      </div>
+    </div>
+  </div>
 </div>
