@@ -1,0 +1,20 @@
+<h2 class="page-header">Settings</h2>
+ <form class="form-horizontal">
+  <div class="form-group">
+    <label for="name" class="col-sm-2 control-label">Name</label>
+    <div class="col-sm-10">
+      <input style="min-width: 400px;" type="text" ng-model="entity.name" class="form-control" id="name" placeholder="Name">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description" class="col-sm-2 control-label">Description</label>
+    <div class="col-sm-10">
+      <textarea maxlength="1000" ng-model="entity.description" class="form-control" id="description" rows="5"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success"ng-click="updateWorkSpace()"><i class="fa fa-refresh"></i> Update</button>
+    </div>
+  </div>
+</form>

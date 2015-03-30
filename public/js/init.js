@@ -14,13 +14,15 @@
       'event-emitter':     '/deps/eventemitter2/lib/eventemitter2',
       'marked':            '/deps/marked/lib/marked',
       'angular/sanitize':  '/deps/angular-sanitize/angular-sanitize',
+      'bootstrap':         '/deps/bootstrap/dist/js/bootstrap.min'
     },
     shim: {
       'angular':           { 'exports': 'angular', 'deps': ['jquery'] },
       'jquery':            { 'exports': 'jQuery'   },
       'angular/ui-router': { 'deps': ['angular']   },
       'angular/route':     { 'deps': ['angular']   },
-      'angular/sanitize':  { 'deps': ['angular']   }
+      'angular/sanitize':  { 'deps': ['angular']   },
+      'bootstrap':         { 'deps': ['jquery'] }
     },
     config: {
       'draftr/app': [
@@ -40,9 +42,14 @@
         { path: 'draftr/controller/work-space/detail/feed',    name: 'WorkSpaceDetailFeedController' },
         { path: 'draftr/controller/work-space/detail/team',    name: 'WorkSpaceDetailTeamController' },
         { path: 'draftr/controller/work-space/detail/options', name: 'WorkSpaceDetailOptionsController' },
+
+        { path: 'draftr/controller/work-space/detail/options/settings', name: 'WorkSpaceDetailOptionsSettingsController' },
+        { path: 'draftr/controller/work-space/detail/options/feed', name: 'WorkSpaceDetailOptionsFeedController' },
+        { path: 'draftr/controller/work-space/detail/options/team', name: 'WorkSpaceDetailOptionsTeamController' },
+        { path: 'draftr/controller/work-space/detail/options/article', name: 'WorkSpaceDetailOptionsArticleController' },
       ]
     }
   });
 
-  require(['draftr/bootstrap'], function () {});
+  require(['draftr/bootstrap', 'bootstrap'], function () {});
 })(window.requirejs);

@@ -1,9 +1,9 @@
 
 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-  <section class="section" ng-show="!feeds.length">
+  <section class="section" ng-show="!entity.feeds.length">
     <h3>No Feeds found</h3>
   </section>
-  <div class="post-preview" ng-repeat="item in feeds">
+  <div class="post-preview" ng-repeat="item in entity.feeds">
     <a>
       <h2 class="post-title">
       {{item.url}}

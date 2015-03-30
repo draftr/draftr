@@ -1,0 +1,24 @@
+<h2 class="page-header">Article</h2>
+
+<table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <th>
+      Title
+    </th>
+    <th>
+    </th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in articles" ng-show="articles.length">
+      <td>
+        {{ item.article.title }}
+      </td>
+      <td>
+        <div class="action">
+          <a ng-click="removeArticle(item.article._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
+          <a ui-sref="work-space-write({ id: entity.id, articleId: item.article._id })"class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,39 @@
+<h2 class="page-header">Feeds</h2>
+
+<form class="form-inline">
+  <div class="form-group">
+    <label for="deed" class="col-sm-3 control-label">Feed Url</label>
+    <div class="col-sm-9">
+      <input style="min-width: 400px;"  type="text" ng-model="feedUrl" class="form-control" id="deed" placeholder="Feed">
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="col-sm-offset-3 col-sm-9">
+      <button type="submit" class="btn btn-success" ng-click="addFeed()"><i class="fa fa-plus"></i> Add Feed</button>
+    </div>
+  </div>
+</form>
+
+<hr>
+
+<table class="table table-bordered table-hover table-responsive">
+  <thead>
+    <th>
+      Url
+    </th>
+    <th>
+    </th>
+  </thead>
+  <tbody>
+    <tr ng-repeat="item in feeds" ng-show="feeds.length">
+      <td>
+        {{ item.url }}
+      </td>
+      <td>
+        <div class="action">
+          <a ng-click="removeFeed(item._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

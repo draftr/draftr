@@ -1,164 +1,25 @@
-<div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
+<div class="col-lg-3 col-md-3">
+  <ul class="nav nav-pills nav-stacked">
+    <li><a ui-sref="work-space-detail.options.settings">Settings</a></li>
+    <li><a ui-sref="work-space-detail.options.team">Team</a></li>
+    <li><a ui-sref="work-space-detail.options.feed">Feeds</a></li>
+    <li><a ui-sref="work-space-detail.options.article">Article</a></li>
+  </ul>
+</div>
+<div class="col-lg-9 col-md-9">
   <div class="success" ng-show="success">
     <div class="alert alert-success fade in" role="alert">
       <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
       {{success.message}}
     </div>
   </div>
-  <h2 class="page-header">Settings</h2>
-   <form class="form-horizontal">
-    <div class="form-group">
-      <div class="error" ng-show="err">
-        <div class="alert alert-warning alert-dismissible fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <strong>Ups!</strong> {{ err.message }}.
-        </div>
-      </div>
+  <div class="error" ng-show="err">
+    <div class="alert alert-warning alert-dismissible fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>Ups!</strong> {{ err.message }}.
     </div>
-    <div class="form-group">
-      <label for="name" class="col-sm-2 control-label">Name</label>
-      <div class="col-sm-10">
-        <input style="min-width: 400px;" type="text" ng-model="entity.name" class="form-control" id="name" placeholder="Name">
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="description" class="col-sm-2 control-label">Description</label>
-      <div class="col-sm-10">
-        <textarea maxlength="1000" ng-model="entity.description" class="form-control" id="description" rows="5"></textarea>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-success"ng-click="updateWorkSpace()"><i class="fa fa-refresh"></i> Update</button>
-      </div>
-    </div>
-  </form>
-
-  <h2 class="page-header">Users</h2>
-
-  <form class="form-inline">
-    <div class="form-group">
-      <div class="error" ng-show="errUser">
-        <div class="alert alert-warning alert-dismissible fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <strong>Ups!</strong> {{ errUser.message }}.
-        </div>
-      </div>
-      <label for="user" class="col-sm-3 control-label">Name / Email</label>
-      <div class="col-sm-9">
-        <input style="min-width: 400px;" type="text" ng-model="search" class="form-control" id="user" placeholder="Name / Email">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-9">
-        <button type="submit" class="btn btn-success"ng-click="addNewUser()"><i class="fa fa-plus"></i> Add User</button>
-      </div>
-    </div>
-  </form>
-
+  </div>
+  <div ui-view="inner"></div>
   <hr>
-
-  <table class="table table-bordered table-hover">
-    <thead>
-      <th>Name</th>
-      <th>Email-Adres</th>
-      <th>Rights</th>
-      <th></th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in team" ng-show="team.length">
-        <td>
-          {{ item.user.username }}
-        </td>
-        <td>
-          {{ item.user.emailAddress}}
-        </td>
-        <td>
-          <span class="label label-success" ng-show="item.isOwner">Owner</span>
-          <span class="label label-info" ng-show="item.isModerator">Moderator</span>
-          <span class="label label-warning" ng-show="item.isAdmin">WorkSpace Admin</span>
-        </td>
-        <td>
-          <div class="action">
-            <a ng-hide="item.isOwner || user.id == item.user._id" ng-click="toOwner(item.user._id)" class="btn btn-success btn-xs">To Owner</a>
-            <a ng-hide="item.isAdmin || !item.isOwner || right != 'admin' || user.id == item.user._id" ng-click="remouveOwner(item.user._id)" class="btn btn-warning btn-xs">Remouve Owner</a>
-            <a ng-hide="item.isAdmin || user.id == item.user._id" ng-click="removeUser(item.user._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2 class="page-header">Feeds</h2>
-
-  <form class="form-inline">
-    <div class="form-group">
-      <div class="error" ng-show="errFeed">
-        <div class="alert alert-warning alert-dismissible fade in" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-          <strong>Ups!</strong> {{ errFeed.message }}.
-        </div>
-      </div>
-      <label for="deed" class="col-sm-3 control-label">Feed Url</label>
-      <div class="col-sm-9">
-        <input style="min-width: 400px;"  type="text" ng-model="feedUrl" class="form-control" id="deed" placeholder="Feed">
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-3 col-sm-9">
-        <button type="submit" class="btn btn-success" ng-click="addFeed()"><i class="fa fa-plus"></i> Add Feed</button>
-      </div>
-    </div>
-  </form>
-
-  <hr>
-
-  <table class="table table-bordered table-hover">
-    <thead>
-      <th>
-        Url
-      </th>
-      <th>
-      </th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in feeds" ng-show="feeds.length">
-        <td>
-          {{ item.url }}
-        </td>
-        <td>
-          <div class="action">
-            <a ng-click="removeFeed(item._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h2 class="page-header">Article</h2>
-
-  <table class="table table-bordered table-hover">
-    <thead>
-      <th>
-        Title
-      </th>
-      <th>
-      </th>
-    </thead>
-    <tbody>
-      <tr ng-repeat="item in articles" ng-show="articles.length">
-        <td>
-          {{ item.article.title }}
-        </td>
-        <td>
-          <div class="action">
-            <a ng-click="removeArticle(item.article._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
-            <a ui-sref="work-space-write({ id: entity.id, articleId: item.article._id })"class="btn btn-warning btn-xs"><i class="fa fa-pencil"></i> Edit</a>
-          </div>
-        </td>
-      </tr>
-    </tbody>
-  </table>
-  <hr>
-  <button ng-show="right == 'admin'" class="btn btn-danger" ng-click="deleteWorkSpace()"><i class="fa fa-trash-o"></i> Delete WokrSpace</button>
+  <button ng-show="right == 'owner'" class="btn btn-danger" ng-click="deleteWorkSpace()"><i class="fa fa-trash-o"></i> Delete WokrSpace</button>
 </div>

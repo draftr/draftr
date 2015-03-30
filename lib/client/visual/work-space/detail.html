@@ -1,21 +1,21 @@
 <header class="intro-header" style="background-image: url('img/hero-5.jpg')">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>{{ entity.name }}</h1>
-                    <hr class="small">
-                    <span class="subheading">{{ entity.description | limitTo: 270 }}</span>
-                </div>
-                <ul class="nav nav-tabs">
-                  <li ui-sref-active="active"><a ui-sref="work-space-detail.article">Articles</a></li>
-                  <li ui-sref-active="active"><a ui-sref="work-space-detail.feed">Feeds</a></li>
-                  <li ui-sref-active="active"><a ui-sref="work-space-detail.team">Team</a></li>
-                  <li ng-show="entity.userIsOwner" ui-sref-active="active"><a ui-sref="work-space-detail.options">Options</a></li>
-                </ul>
-            </div>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="site-heading">
+              <h1>{{ entity.name }}</h1>
+              <hr class="small">
+              <span class="subheading">{{ entity.description | limitTo: 270 }}</span>
+          </div>
+          <ul class="nav nav-tabs">
+            <li ui-sref-active="active"><a ui-sref="work-space-detail.article">Articles</a></li>
+            <li ui-sref-active="active"><a ui-sref="work-space-detail.feed">Feeds</a></li>
+            <li ui-sref-active="active"><a ui-sref="work-space-detail.team">Team</a></li>
+            <li ng-show="entity.userIsAdmin" ui-sref-active="active"><a ui-sref="work-space-detail.options">Options</a></li>
+          </ul>
+      </div>
     </div>
+  </div>
 </header>
 
 <div class="container">
