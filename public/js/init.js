@@ -14,7 +14,8 @@
       'event-emitter':     '/deps/eventemitter2/lib/eventemitter2',
       'marked':            '/deps/marked/lib/marked',
       'angular/sanitize':  '/deps/angular-sanitize/angular-sanitize',
-      'bootstrap':         '/deps/bootstrap/dist/js/bootstrap.min'
+      'bootstrap':         '/deps/bootstrap/dist/js/bootstrap.min',
+      'socket.io':         '/socket.io/socket.io',
     },
     shim: {
       'angular':           { 'exports': 'angular', 'deps': ['jquery'] },
@@ -47,7 +48,7 @@
         { path: 'draftr/controller/work-space/detail/options/settings', name: 'WorkSpaceDetailOptionsSettingsController' },
         { path: 'draftr/controller/work-space/detail/options/feed',     name: 'WorkSpaceDetailOptionsFeedController' },
         { path: 'draftr/controller/work-space/detail/options/team',     name: 'WorkSpaceDetailOptionsTeamController' },
-        { path: 'draftr/controller/work-space/detail/options/article',  name: 'WorkSpaceDetailOptionsArticleController' },
+        { path: 'draftr/controller/work-space/detail/options/article',  name: 'WorkSpaceDetailOptionsArticleController' }
       ]
     }
   });
