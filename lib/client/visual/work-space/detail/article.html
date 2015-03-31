@@ -2,12 +2,12 @@
   <a style="float:right;" class="btn btn-default" ui-sref="work-space-write({ id: entity.id })"><i class="fa fa-pencil"></i> New Article</a>
   <div class="post-preview" ng-repeat="item in entity.articles">
     <a ui-sref="work-space-write({ id: entity.id, articleId: item.article._id })">
-        <h2 class="post-title">
-             {{item.article.title}}
-        </h2>
-        <p class="post-subtitle">
-            {{item.article.createdAt | date:'medium'}}
-        </p>
+      <h2 class="post-title">
+           {{item.article.title}}
+      </h2>
+      <p class="post-subtitle">
+          {{item.article.createdAt | date:'medium'}}
+      </p>
     </a>
     <p class="post-meta" ng-bind-html="item.article.body | limitTo: 500 "></p>
      <hr>

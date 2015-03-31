@@ -1,6 +1,13 @@
 <h2 class="page-header">Team</h2>
-
 <form class="form-inline">
+  <div class="alert alert-danger alert-dismissible fade in" role="alert" ng-show="err">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    <strong>{{ err.message }}.</strong>
+  </div>
+  <div class="alert alert-success alert-dismissible fade in" role="alert" ng-show="success">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+    <strong>{{ success.message }}.</strong>
+  </div>
   <div class="form-group">
     <label for="user" class="col-sm-3 control-label">Name / Email</label>
     <div class="col-sm-9">
@@ -13,9 +20,7 @@
     </div>
   </div>
 </form>
-
 <hr>
-
 <table class="table table-bordered table-hover table-responsive">
   <thead>
     <th>Name</th>
@@ -38,7 +43,7 @@
       </td>
       <td>
         <div class="action" ng-if="entity.userIsAdmin">
-          <a ng-hide="item.isAdmin || !item.isOwner" ng-click="toAdmin(item.user._id)" class="btn btn-success btn-xs">To Admin</a>
+          <a ng-hide="item.isAdmin || item.isOwner" ng-click="toAdmin(item.user._id)" class="btn btn-success btn-xs">To Admin</a>
           <a ng-hide="item.isOwner || !item.isAdmin" ng-click="remouveAdmin(item.user._id)" class="btn btn-warning btn-xs">Remouve Admin</a>
           <a ng-hide="item.isOwner" ng-click="removeUser(item.user._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
         </div>

@@ -7,18 +7,6 @@
   </ul>
 </div>
 <div class="col-lg-9 col-md-9">
-  <div class="success" ng-show="success">
-    <div class="alert alert-success fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-      {{success.message}}
-    </div>
-  </div>
-  <div class="error" ng-show="err">
-    <div class="alert alert-warning alert-dismissible fade in" role="alert">
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-      <strong>Ups!</strong> {{ err.message }}.
-    </div>
-  </div>
   <div ui-view="inner"></div>
   <hr>
   <button ng-show="right == 'owner'" class="btn btn-danger" ng-click="deleteWorkSpace()"><i class="fa fa-trash-o"></i> Delete WokrSpace</button>

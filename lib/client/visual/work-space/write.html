@@ -1,5 +1,3 @@
-<div ng-show="success" class="alert alert-success" role="alert">Article saved</div>
-<div ng-show="err" class="alert alert-danger" role="alert">{{err.message}}</div>
 <div class="work-space-write">
   <div class="article list-group">
     <div id="accordion" role="tablist" aria-multiselectable="true" ng-repeat="article in feeds" class="list-group-item">
@@ -11,7 +9,7 @@
         </h4>
         <span class="feed-article-date">
           {{article.createdAt | date:'medium'}}
-          <a class="btn btn-link pull-right" target="_blank" href="{{article.url}}">Go to Article</a>
+          <a class="btn btn-link pull-right" ui-sref="feed-article({ id: article._id })">Go to Article</a>
         </span>
         <div class="clearfix"></div>
         <div id="{{article._id}}" class="collapse clearfix" role="tabpanel">
@@ -22,10 +20,18 @@
     </div>
   </div>
   <div class="editor clearfix">
-      <textarea  maxlength="50" ng-model="title" class="form-control editor-title" placeholder="Title" ng-change="inputTitleChange()">
-      </textarea>
-      <textarea ng-model="input" ng-change="inputChange()" class="form-control editor-body">
-      </textarea>
+    <div class="alert alert-danger alert-dismissible fade in" role="alert" ng-show="err">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>{{ err.message }}.</strong>
+    </div>
+    <div class="alert alert-success alert-dismissible fade in" role="alert" ng-show="success">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>Saved.</strong>
+    </div>
+    <textarea  ngMaxlength="50" ngMinlength="3" ng-model="title" class="form-control editor-title" placeholder="Title" ng-change="inputTitleChange()">
+    </textarea>
+    <textarea ngMinlength="3" ng-model="input" ng-change="inputChange()" class="form-control editor-body">
+    </textarea>
   </div>
   <div class="preview clearfix">
     <div class="preview-title" ng-bind-html="previewTitle"></div>

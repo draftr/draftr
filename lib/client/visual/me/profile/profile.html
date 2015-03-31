@@ -7,17 +7,13 @@
   </div>
   <h1 class="page-header">Update profile</h1>
   <form class="form-horizontal">
-    <div class="error" ng-show="err">
-      <div class="alert alert-warning alert-dismissible fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <strong>Ups!</strong> {{ err.message }}.
-      </div>
+    <div class="alert alert-danger alert-dismissible fade in" role="alert" ng-show="err">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>{{ err.message }}.</strong>
     </div>
-    <div class="success" ng-show="success">
-      <div class="alert alert-success fade in" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <strong>Your Profile is Updated</strong>
-      </div>
+    <div class="alert alert-success alert-dismissible fade in" role="alert" ng-show="success">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>{{ success.message }}.</strong>
     </div>
     <div class="form-group">
       <label for="me-username" class="col-sm-2 control-label">Username</label>
@@ -40,6 +36,14 @@
 
   <h1 class="page-header">Change password</h1>
   <form class="form-horizontal">
+    <div class="alert alert-danger alert-dismissible fade in" role="alert" ng-show="errPw">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>{{ errPw.message }}.</strong>
+    </div>
+    <div class="alert alert-success alert-dismissible fade in" role="alert" ng-show="successPw">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+      <strong>{{ successPw.message }}.</strong>
+   </div>
     <div class="error" ng-show="errPassword">
       <div class="alert alert-warning alert-dismissible fade in" role="alert">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>

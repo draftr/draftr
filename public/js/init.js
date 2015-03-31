@@ -30,6 +30,7 @@
         { path: 'draftr/controller/home',                 name: 'HomeController'   },
         { path: 'draftr/controller/sign-in',              name: 'SignInController' },
         { path: 'draftr/controller/sign-up',              name: 'SignUpController' },
+        { path: 'draftr/controller/feed/articleDetail',   name: 'FeedArticleDetailController' },
         { path: 'draftr/controller/work-space/list',      name: 'WorkSpaceListController' },
         { path: 'draftr/controller/work-space/detail',    name: 'WorkSpaceDetailController' },
         { path: 'draftr/controller/work-space/write',     name: 'WorkSpaceWriteController' },
@@ -44,9 +45,9 @@
         { path: 'draftr/controller/work-space/detail/options', name: 'WorkSpaceDetailOptionsController' },
 
         { path: 'draftr/controller/work-space/detail/options/settings', name: 'WorkSpaceDetailOptionsSettingsController' },
-        { path: 'draftr/controller/work-space/detail/options/feed', name: 'WorkSpaceDetailOptionsFeedController' },
-        { path: 'draftr/controller/work-space/detail/options/team', name: 'WorkSpaceDetailOptionsTeamController' },
-        { path: 'draftr/controller/work-space/detail/options/article', name: 'WorkSpaceDetailOptionsArticleController' },
+        { path: 'draftr/controller/work-space/detail/options/feed',     name: 'WorkSpaceDetailOptionsFeedController' },
+        { path: 'draftr/controller/work-space/detail/options/team',     name: 'WorkSpaceDetailOptionsTeamController' },
+        { path: 'draftr/controller/work-space/detail/options/article',  name: 'WorkSpaceDetailOptionsArticleController' },
       ]
     }
   });
