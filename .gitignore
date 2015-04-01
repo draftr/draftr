@@ -5,3 +5,4 @@ public/deps
 distdump.rdb
 *.rdb
 public/css/draftr.css
+config.js
