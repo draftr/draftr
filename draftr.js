@@ -1,3 +1,4 @@
+/*jslint node: true */
 'use strict';
 
 var app = require('./lib/server/dispatch');
