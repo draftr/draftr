@@ -28,6 +28,7 @@
     config: {
       'draftr/app': [
         { path: 'draftr/controller/header',               name: 'HeaderController' },
+        { path: 'draftr/controller/error',                name: 'ErrorController' },
         { path: 'draftr/controller/home',                 name: 'HomeController'   },
         { path: 'draftr/controller/sign-in',              name: 'SignInController' },
         { path: 'draftr/controller/sign-up',              name: 'SignUpController' },
@@ -41,14 +42,12 @@
         { path: 'draftr/controller/me/work-space/list',   name: 'MeWorkSpaceListController' },
 
         { path: 'draftr/controller/work-space/detail/article', name: 'WorkSpaceDetailArticleController' },
-        { path: 'draftr/controller/work-space/detail/feed',    name: 'WorkSpaceDetailFeedController' },
         { path: 'draftr/controller/work-space/detail/team',    name: 'WorkSpaceDetailTeamController' },
         { path: 'draftr/controller/work-space/detail/options', name: 'WorkSpaceDetailOptionsController' },
 
-        { path: 'draftr/controller/work-space/detail/options/settings', name: 'WorkSpaceDetailOptionsSettingsController' },
+        { path: 'draftr/controller/work-space/detail/options/general', name: 'WorkSpaceDetailOptionsGeneralController' },
         { path: 'draftr/controller/work-space/detail/options/feed',     name: 'WorkSpaceDetailOptionsFeedController' },
-        { path: 'draftr/controller/work-space/detail/options/team',     name: 'WorkSpaceDetailOptionsTeamController' },
-        { path: 'draftr/controller/work-space/detail/options/article',  name: 'WorkSpaceDetailOptionsArticleController' }
+        { path: 'draftr/controller/work-space/detail/options/team',     name: 'WorkSpaceDetailOptionsTeamController' }
       ]
     }
   });

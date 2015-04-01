@@ -26,7 +26,7 @@
     <th>Name</th>
     <th>Email-Adres</th>
     <th>Rights</th>
-    <th></th>
+    <th ng-if="team.length > 1"></th>
   </thead>
   <tbody>
     <tr ng-repeat="item in team" ng-show="team.length">
@@ -41,10 +41,10 @@
         <span class="label label-info" ng-show="item.isModerator">Moderator</span>
         <span class="label label-warning" ng-show="item.isAdmin">WorkSpace Admin</span>
       </td>
-      <td>
+      <td  ng-if="team.length > 1">
         <div class="action" ng-if="entity.userIsAdmin">
           <a ng-hide="item.isAdmin || item.isOwner" ng-click="toAdmin(item.user._id)" class="btn btn-success btn-xs">To Admin</a>
-          <a ng-hide="item.isOwner || !item.isAdmin" ng-click="remouveAdmin(item.user._id)" class="btn btn-warning btn-xs">Remouve Admin</a>
+          <a ng-hide="item.isOwner || !item.isAdmin" ng-click="removeAdmin(item.user._id)" class="btn btn-warning btn-xs">Remove Admin</a>
           <a ng-hide="item.isOwner" ng-click="removeUser(item.user._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Delete</a>
         </div>
       </td>

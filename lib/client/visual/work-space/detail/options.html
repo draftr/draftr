@@ -1,13 +1,10 @@
 <div class="col-lg-3 col-md-3">
   <ul class="nav nav-pills nav-stacked">
-    <li><a ui-sref="work-space-detail.options.settings">Settings</a></li>
+    <li><a ui-sref="work-space-detail.options.general">General</a></li>
     <li><a ui-sref="work-space-detail.options.team">Team</a></li>
     <li><a ui-sref="work-space-detail.options.feed">Feeds</a></li>
-    <li><a ui-sref="work-space-detail.options.article">Article</a></li>
   </ul>
 </div>
 <div class="col-lg-9 col-md-9">
   <div ui-view="inner"></div>
-  <hr>
-  <button ng-show="right == 'owner'" class="btn btn-danger" ng-click="deleteWorkSpace()"><i class="fa fa-trash-o"></i> Delete WokrSpace</button>
 </div>

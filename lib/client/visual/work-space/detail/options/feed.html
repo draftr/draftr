@@ -20,8 +20,8 @@
     </div>
   </div>
 </form>
-<hr>
-<table class="table table-bordered table-hover table-responsive">
+<hr ng-if="feeds.length">
+<table class="table table-bordered table-hover table-responsive" ng-hide="!feeds.length">
   <thead>
     <th>
       Url
@@ -36,7 +36,7 @@
       </td>
       <td>
         <div class="action">
-          <a ng-click="removeFeed(item._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remouve</a>
+          <a ng-click="removeFeed(item._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remove</a>
         </div>
       </td>
     </tr>
