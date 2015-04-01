@@ -12,9 +12,10 @@
   </div>
 </header>
 <div class="container">
-  <a style="float:right;" class="btn btn-default" ui-sref="work-space-create"><i class="fa fa-pencil"></i> New Workspace</a>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <a style="float:right;" class="btn btn-default" ui-sref="work-space-create"><i class="fa fa-pencil"></i> New Workspace</a>
+      <div class="clearfix"></div>
       <div class="post-preview" ng-repeat="item in list">
         <a ui-sref="work-space-detail.article({ id: item.id })">
           <h2 class="post-title">

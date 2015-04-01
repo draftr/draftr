@@ -3,11 +3,14 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
     <strong>{{ err.message }}.</strong>
   </div>
+   <div class="clearfix"></div>
   <div class="alert alert-success alert-dismissible fade in" role="alert" ng-show="success">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
     <strong>{{ success.message }}.</strong>
   </div>
+   <div class="clearfix"></div>
   <a style="float:right;" class="btn btn-default" ui-sref="work-space-write({ id: entity.id })"><i class="fa fa-pencil"></i> New Article</a>
+  <div class="clearfix"></div>
   <div class="post-preview" ng-repeat="item in articles">
     <a ui-sref="work-space-write({ id: entity.id, articleId: item.article._id })">
       <h2 class="post-title">
@@ -25,5 +28,6 @@
         <a ng-click="removeArticle(item.article._id)" class="btn btn-danger btn-xs"><i class="fa fa-trash-o"></i> Remove</a>
       </div>
     </p>
+    <div class="clearfix"></div>
   </div>
 </div>
