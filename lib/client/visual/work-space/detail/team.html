@@ -3,14 +3,14 @@
     <h3>No team found</h3>
   </section>
   <div class="post-preview"  ng-repeat="item in team">
-    <a>
-      <h2 class="post-title">
-        <img ng-src="{{ item.user.image }}?size=40" class="img-circle user-img">{{item.user.username}}
-      </h2>
-      <p class="post-subtitle">
-        {{item.user.emailAddress}}
-      </p>
-    </a>
+
+    <h2 class="post-title">
+      <img ng-src="{{ item.user.image }}?size=40" class="img-circle user-img">{{item.user.username}}
+    </h2>
+    <p class="post-subtitle">
+      {{item.user.emailAddress}}
+    </p>
+
     <p class="post-meta">
       <span class="label label-success" ng-show="item.isOwner">Owner</span>
       <span class="label label-info" ng-show="item.isModerator">Moderator</span>
