@@ -57,7 +57,7 @@
             <ul>
               <li>Über 100 Mittarbeiter, davon 65 in München</li>
               <li>Große Web-Portale</li>
-              <li>Finanzanalysewerkzeuge, Echtzeit-Nachrichten, Zitate, Expertenkommentare, Handelssignale</li>
+              <li>Finanzanalysewerkzeuge, Echtzeit-Nachrichten, Expertenkommentare, Handelssignale</li>
             </ul>
           </section>
           <section>
@@ -75,8 +75,8 @@
           <section>
             <h2>Kunden</h2>
             <p>B2C: Privatkunden, Day-Trader, technische Analysten</p>
-            <p>Premium Services</p>
             <p>B2B: Kundenspezifische Tools für externe Partner</p>
+            <p>Premium Services</p>
           </section>
         </section>
         <section data-background="#b5533c">
@@ -110,7 +110,7 @@
           <h2>Ziel</h2>
           <ul>
             <li>Verfassen von Artikeln erleichtern</li>
-            <li>Samlungen von externen Artikeln</li>
+            <li>Sammlungen von externen Artikeln</li>
             <li>Arbeiten im Team</li>
             <li>Vereinfachte Quellensuche</li>
           </ul>
@@ -120,15 +120,15 @@
           <img data-src="img/HowItWorks.jpg" style="max-height:55%; max-width: 55%;">
         </section>
         <section>
-          <h2>Verwendete Software</h2>
-          <ul>
-            <li><a href="http://github.com" target="_blank">GitHub</a></li>
-            <li><a href="http://www.mongodb.org" target="_blank">MongoDB</a></li>
-            <li><a href="http://mongoosejs.com" target="_blank">mongoose</a></li>
-            <li><a href="https://nodejs.org" target="_blank">Node.js</a></li>
-            <li><a href="http://expressjs.com" target="_blank">express</a></li>
-            <li><a href="http://angularjs.org" target="_blank">angular</a></li>
-          </ul>
+          <section>
+            <h2>Wie?</h2>
+            <img class="fragment" data-src="img/github.jpg" style="max-width: 200px;">
+            <img class="fragment" data-src="img/javascript.png" style="max-width: 200px;">
+            <img class="fragment" data-src="img/mongodb.png" style="max-width: 200px;">
+            <img class="fragment" data-src="img/nodejs.png" style="max-width: 200px;">
+            <img class="fragment" data-src="img/express.png" style="max-width: 200px;">
+            <img class="fragment" data-src="img/angularjs.png" style="max-width: 200px; background: #fff;">
+          </section>
         </section>
         <section data-background="#b5533c">
           <h1>Agenda</h1>
@@ -147,7 +147,7 @@
             <h2>GitHub</h2>
             <ul>
               <li>Versionsverwaltung</li>
-              <li>Sämtliche Änderungen von allen Autoren werden gespeichert</li>
+              <li>Sämtliche Änderungen von allen Entwicklern werden gespeichert</li>
               <li>Web-Interface, Wiki und Task-System für Entwickler</li>
             </ul>
           </section>
@@ -161,19 +161,39 @@
             <img data-src="img/mongodb.png" style="max-width: 500px;">
             <div>
               <ul>
-                <li>Open-Source-Datenbank</li>
-                <li>Schema-frei</li>
-                <li>Objektorientiert</li>
+                <li>Open Source Datenbank</li>
+                <li>Schemafrei</li>
+                <li>Objektorientiert (<code>BSON</code>)</li>
               </ul>
             </div>
           </section>
           <section>
             <h2>Datenbankaufbau</h2>
-            <img data-src="img/db.png" style="background-color:white;">
+            <pre><code>$ mongo
+MongoDB shell version: 2.6.7
+
+> show tables
+article
+feed
+token
+user
+work-space
+work-space-article</code></pre>
           </section>
           <section>
             <h2>Datenbank Objekt</h2>
-            <img data-src="img/dbObject.png" style="background-color:white;">
+            <pre><code>$ mongo
+MongoDB shell version: 2.6.7
+
+> db.article.find().limit(1);
+{
+  "_id": ObjectId("551a9103c15d041323b13ea0"),
+  "url": "http://www.spiegel.de/karriere/berufsleben/psychisch-krank-psychiater-hegerl-ueber-umgang-mit-depressionen-a-1026231.html#ref=rss", "title": "Psychisch krank: Psychiater Hegerl über Umgang mit Depressionen",
+  "body": "...",
+  "createdAt": ISODate("2015-03-31T12:20:19.963Z"),
+  "updatedAt": ISODate("2015-03-31T12:20:19.963Z"),
+  "__v": 0
+}</code></pre>
           </section>
         </section>
         <section>
@@ -181,8 +201,8 @@
             <img data-src="img/mongoose.png" style="background: white; max-width: 500px;">
             <div>
               <ul>
-                <li>Node.js Modul</li>
-                <li>Schema-basierte Lösung</li>
+                <li><code>Node.js</code> module</li>
+                <li>Schemabasierte Lösung</li>
                 <li>Datenmodellierung</li>
                 <li>Integrierte Typumwandlung und Validierung</li>
               </ul>
@@ -211,19 +231,20 @@ mongoose.model('Article', schema, 'article');</code></pre>
             <div><img data-src="img/express.jpg" style="max-width: 300px;"></div>
           </section>
           <section>
-            <h3>Node.js</h3>
+            <h3><code>Node.js</code></h3>
             <ul>
-              <li>Open-Source-Plattform</li>
-              <li>Pure JavaScript</li>
-              <li>Basiert auf der <em>Google v8 JavaScript Engine</em></li>
+              <li>Open Source</li>
+              <li>Pures JavaScript</li>
+              <li>Basiert auf der <code>Google v8 JavaScript Engine</code></li>
             </ul>
           </section>
           <section>
             <h3><code>express</code></h3>
             <ul>
-              <li>Node.js Modul</li>
+              <li><code>Node.js</code> module</li>
               <li>Routenbasierte Webanwendungen</li>
-              <li>Vielzahl von HTTP-Hilfsmethoden und Middleware</li>
+              <li>Implementation von <code>HTTP</code> Methoden (<code>GET</code>, <code>PUT</code>, <code>POST</code> usw.)</li>
+              <li><code>middleware</code></li>
             </ul>
           </section>
           <section>
@@ -348,9 +369,9 @@ app.listen(3000);</code></pre>
           <section>
             <img data-src="img/angularjs.png" style="background-color: white;">
             <ul>
-              <li>JavaScript OpenSource Framework</li>
+              <li><code>JavaScript</code> Open Source Framework</li>
               <li>Single-Page-Apps</li>
-              <li>MVC/MVM</li>
+              <li><code>MVC</code>/<code>MVM</code></li>
               <li>Bidirektionales Databinding</li>
             </ul>
           </section>
@@ -396,45 +417,50 @@ app.listen(3000);</code></pre>
         <section>
           <section>
             <h2><code>draftr</code></h2>
-            <img data-src="img/home.png">
+            <small>Das UI!</small>
           </section>
           <section>
+            <h3>Registrierung</h3>
             <img data-src="img/1.png">
           </section>
           <section>
+            <h3>Anmelden</h3>
             <img data-src="img/2.png">
           </section>
           <section>
-            <img data-src="img/3.png">
-          </section>
-          <section>
+            <h3>Mein Profil bearbeiten</h3>
             <img data-src="img/4.png">
           </section>
           <section>
+            <h3>Neuen Workspace anlegen</h3>
             <img data-src="img/5.png">
           </section>
           <section>
+            <h3>Workspace Übersicht</h3>
             <img data-src="img/6.png">
           </section>
           <section>
+            <h3>Workspace Team</h3>
             <img data-src="img/7.png">
           </section>
           <section>
+            <h3>Workspace bearbeiten</h3>
             <img data-src="img/8.png">
           </section>
           <section>
-            <img data-src="img/9.png">
-          </section>
-          <section>
+            <h3>Workspace Team bearbeiten</h3>
             <img data-src="img/10.png">
           </section>
           <section>
+            <h3>Workspace Feedverwaltung</h3>
             <img data-src="img/11.png">
           </section>
           <section>
+            <h3>Artikel verfassen</h3>
             <img data-src="img/12.png">
           </section>
           <section>
+            <h3>Übersicht aller Artikel im Workspace</h3>
             <img data-src="img/13.png">
           </section>
         </section>
@@ -453,6 +479,7 @@ app.listen(3000);</code></pre>
         history: true,
         center: true,
         transition: 'slide',
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
         /*parallaxBackgroundImage: 'img/bg2.jpg',
         parallaxBackgroundSize: '2560px 1440px',*/
         dependencies: [
